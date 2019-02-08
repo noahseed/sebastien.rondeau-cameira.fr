@@ -1,0 +1,2 @@
+ErrorDocument 403 /?page=403
+deny from all

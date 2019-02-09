@@ -42,8 +42,8 @@
 
             $htmlmess = "<html>\r\n
     <head>\r\n
-        <meta charset='utf-8'>\r\n
-        <title>$subject</title>\r\n
+        <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>\r\n
+        <title>".$subject."</title>\r\n
     </head>\r\n
     <body style='color: whitesmoke; background-color: black; padding: 20px;'>\r\n
         <table>\r\n
@@ -61,33 +61,33 @@
             </tr>\r\n
             <tr>\r\n
                 <th>Prénom</th>\r\n
-                <td>$firstname</td>\r\n
+                <td>".$firstname."</td>\r\n
             </tr>\r\n
             <tr>\r\n
                 <th>Nom</th>\r\n
-                <td>$lastname</td>\r\n
+                <td>".$lastname."</td>\r\n
             </tr>\r\n
             <tr>\r\n
                 <th>Courriel</th>\r\n
-                <td>$email</td>\r\n
+                <td>".$email."</td>\r\n
             </tr>\r\n
             <tr>\r\n
                 <th>Sujet</th>\r\n
-                <td>$subject</td>\r\n
+                <td>".$subject."</td>\r\n
             </tr>\r\n
             <tr>\r\n
                 <th style=\"vertical-align: top;\">Message</th>\r\n
-                <td>$message</td>\r\n
+                <td>".$message."</td>\r\n
             </tr>\r\n
         </table>\r\n
     </body>\r\n
-    </html>";
+</html>";
 
             $headers  = "MIME-Version: 1.0 \r\n";
             $headers .= "Content-type: text/html; charset=utf-8 \r\n";
-            $headers .= "From: $fromname <$frommail> \r\n";
-            $headers .= "Reply-To: $firstname $lastname <$email> \r\n";
-            $headers .= "Disposition-Notification-To: $email \r\n";
+            $headers .= "From: ".$fromname." <".$frommail."> \r\n";
+            $headers .= "Reply-To: ".$firstname." ".$lastname." <".$email."> \r\n";
+            $headers .= "Disposition-Notification-To: ".$email." \r\n";
             // Message de Priorité haute
             // -------------------------
             $headers .= "X-Priority: 1  \r\n";

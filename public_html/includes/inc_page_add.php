@@ -69,7 +69,7 @@
                     // Si les deux informations ont été entrées
                     $title  = $_POST['title'];
                     $serial = $_POST['serial'];
-                    $text = '<iframe class="youtube" src="https://www.youtube.com/embed/'.$serial.'?rel=0" allowfullscreen></iframe>';
+                    $text = $serial;
 
                     $pdo->prepare("INSERT music SET title = ?, text = ?")->execute([$title, $text]);
 

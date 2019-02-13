@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Dim 10 Février 2019 à 11:03
+-- Généré le :  Mer 13 Février 2019 à 19:35
 -- Version du serveur :  10.0.38-MariaDB-0+deb8u1
 -- Version de PHP :  7.0.33-1~dotdeb+8.1
 
@@ -83,7 +83,14 @@ CREATE TABLE IF NOT EXISTS `messages` (
   `email` varchar(50) NOT NULL,
   `sujet` varchar(50) NOT NULL,
   `message` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `messages`
+--
+
+INSERT INTO `messages` (`id`, `prenom`, `nom`, `email`, `sujet`, `message`) VALUES
+(1, 'Sébastien', 'RONDEAU CAMEIRA', 'noahseed@hotmail.com', 'Essai', '');
 
 -- --------------------------------------------------------
 
@@ -548,7 +555,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT pour la table `messages`
 --
 ALTER TABLE `messages`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT pour la table `music`
 --

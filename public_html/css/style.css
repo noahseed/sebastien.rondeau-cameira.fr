@@ -102,6 +102,9 @@ header {
     background-image: radial-gradient(ellipse at center -60px, #9da1ac 0%,#1c202a 100%);
     box-shadow: 5px 5px 7px var(--dark);
 }
+iframe {
+    border: 0;
+}
 input[type="submit"] {
     background-color: var(--light);
     color: #4d4d4d;
@@ -114,11 +117,6 @@ input[type="submit"]:hover {
     background-color: yellowgreen;
     color: var(--dark);
     border-style: inset;
-}
-iframe {
-    border: 0;
-    width: 100%;
-    height: 100%;
 }
 main {
     float: left;

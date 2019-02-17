@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mer 13 Février 2019 à 19:35
+-- Généré le :  Sam 16 Février 2019 à 13:07
 -- Version du serveur :  10.0.38-MariaDB-0+deb8u1
 -- Version de PHP :  7.0.33-1~dotdeb+8.1
 
@@ -475,7 +475,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `confirmation_token`, `confirmed_at`, `reset_token`, `reset_at`, `remember_token`, `is_admin`, `is_vip`) VALUES
 (1, 'sebastien', 'sebastien@rondeau-cameira.fr', '$2y$10$r2bz/.Y0Igt1T0RKlqmkQO/MnQv0BSdOyc.eB2lkwyW1SmP5P6pvC', NULL, '2018-03-13 05:53:57', NULL, NULL, 'YfwsMT3H3bKyuohSp098kZ19nMA09QtRgKLSwA7jFn1dSSRgAMLZsUio9953CLVhkxlSlRoAzphv5RzeRgLl78GCOiDHgssBjKJjqwT21Xjo6IxEfCbwTegK8ntRkd1vymice9ExxOQGO43j6YP4sEZJiSHmFps8YY8UhTuD3nNWJscmahKBIWwNM1tJc4f5jPC7bA7ZcSIaliyI6oP10pW72ud0R6wEt1N8SlmA3mfK7gRCW8ruvcQZXq', 1, 1),
-(2, 'noahseed', 'noahseed@hotmail.com', '$2y$10$S41pUWaTXj5fdhqxtj9uXu/O.Fnas1sUPM/7HFDCeYlA5G3mmkUqe', NULL, '2018-03-18 14:13:36', NULL, NULL, 'qG3qkbzUqeSKi8QkOe4Q4NeaHKZ1tgVxiSzKMWkjuNyW0mn1ln0WIY5WOdwAE6IwaTFhuZCZYxnyhY6p51FEktZCpefTMtp7rcoSCutqqh3KNyvd3ayUmrFVK2O6NeohKlprdzHb8FhD2yCRC14jJQwx97h5BccGnj7HnP4nqAkIKgR4BfVPKGFc2Mum6JAmUU12SlJx85e0r4YMjoJhbBPgEyJhelzAshhFOBNip0mQMwFRFCaWzIYT3E', 1, 1),
+(2, 'noahseed', 'noahseed@hotmail.com', '$2y$10$S41pUWaTXj5fdhqxtj9uXu/O.Fnas1sUPM/7HFDCeYlA5G3mmkUqe', NULL, '2018-03-18 14:13:36', NULL, NULL, 'YrHydZ1ruPFoM9J8Wuzvo2gw8LLlwj5MNUv30PBII7rd9xUAZx8EIFpvJuPqdWwo6Wqu6YFqjK0i3mVr2Z7AcoDjiC2PoraeBGpabRBoGfGXtw0bxgcHEWWngoenU9wLy2H7BIiyPJmWl3nsIdIhuJUtxbk9Ug7O8FUGs2CwAO6rJo199yMUy0c0nK9j0wXoZs0PlrDrj8VPlo7IGasxlQSUbkNTxHM4YA6sZIOQSoQHOr6FVI6CREgils', 1, 1),
 (3, 'aljoce', 'cameiraalice@hotmail.fr', '$2y$10$r2bz/.Y0Igt1T0RKlqmkQO/MnQv0BSdOyc.eB2lkwyW1SmP5P6pvC', NULL, '2018-03-18 13:27:36', NULL, NULL, 'fyGomw8KlteDj4CupB2eDa5oSdrVQl9HE1AWiSDFEar293lb4mGEQd4vAbWdtHv2v0tY7Ff9qxtnZpRpoOa3E0SqjwZkPGEflpHD47mtFIyqjq9rTT8kG9Bz0qfOwT2LdU5wICXjhyyU6j1dsyQjFh0Bh8ZQVAZeywbWuASVgZhnAEwbEsRnGTUoku1UTVWd4DRSlASOECR25iEpwQlcx2ZAwDLDy9tSTNuuneUM2rgfIM7G7QT2vhnVcM', NULL, NULL),
 (4, 'nezarus', 'rgeulpk@gmail.com', '$2y$10$lZUovTBZMhXD4LAdYDi9EuJhGmo.oFiBgqDYg07DWDrb6/QwLP3ym', NULL, '2018-03-20 21:27:51', NULL, NULL, 'eZS9KypirX1xLp5pj4ixt4oO6Nxsv3ujiTtJKTBg4y0oYRIHjGSsKlzBkm76eaB9J6lW6XkLwMQ6GDfAofnoBafPJPdp6ryLr1vYnacEwo1KnHZKWu3tALnadPH9VDE8hDzZxotPkii3Qv452azWAeLqWS2rHqNb2oYLLclOSHxtGaKAc8gSAxE2BiJcdmvDYtnxxynJjlscD6TuxjEALEDhiL95YJhxvUbxJCRLSI1WDbzVhh5dIic4Bi', NULL, NULL);
 

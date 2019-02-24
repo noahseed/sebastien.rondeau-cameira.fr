@@ -1,4 +1,3 @@
-<?php require('functions.php'); ?>
 <?php
     // Logged Only
     if(!isset($_SESSION['auth'])) {
@@ -6,8 +5,11 @@
         header('Location: /?page=login');
         exit();
     }
+
+    $users = new Users();
 ?>
 <?php
+    /*
     // Traitement du formulaire de modification de mot de passe
     if(!empty($_POST['password'])) { // Si on reçoit du contenu
         if($_POST['password'] != $_POST['password_confirm']) {
@@ -15,7 +17,7 @@
             $_SESSION['flash']['error'] = "Les mots de passes ne correspondent pas.";
         } else {
             // Si password et password_confirm correspondent
-            $user_id  = $_SESSION['auth']->id;
+            $user_id  = $_SESSION['auth']['user_id'];
             $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
             $pdo->prepare("UPDATE users SET password = ? WHERE id = ?")->execute([$password, $user_id]);
@@ -23,11 +25,12 @@
             $_SESSION['flash']['success'] = "Votre mot de passe a bien été mis à jour.";
         }
     }
+    */
 ?>
         <article>
             <div class="title"><?php echo $title; ?></div>
             <div class="article">
-                <h1>Bonjour <?php echo ucfirst(strtolower($_SESSION['auth']->username)); ?> !</h1>
+                <h1>Bonjour <?php echo ucfirst(strtolower($_SESSION['auth']['user_username'])); ?> !</h1>
 <?php
     // Si message(s) flash
     if(isset($_SESSION['flash'])) {
@@ -38,10 +41,9 @@
     unset($_SESSION['flash']);
 ?>
 <?php // Si l'utilisateur est un admin
-    if($_SESSION['auth']->is_admin == TRUE) {
+    if($_SESSION['auth']['user_is_admin'] == TRUE) {
         // Affichage des options
-        $select = $pdo->query("SELECT id, username FROM users ORDER BY username");
-        $users  = $select->fetchAll();
+        $utilisateurs  = $users->findAll();
 ?>
                 <table>
                     <tr>
@@ -53,8 +55,8 @@
                     <tr>
                         <td>
                             <ul>
-<?php foreach($users as $user) { ?>
-                                <li><?php echo ucfirst(strtolower($user->username)); ?></li>
+<?php foreach($utilisateurs as $user) { ?>
+                                <li><?php echo ucfirst(strtolower($user['user_username'])); ?></li>
 <?php } ?>
                             </ul>
                         </td>

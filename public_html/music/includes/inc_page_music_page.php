@@ -18,21 +18,19 @@
 <?php } ?>
             <div class="title"><?php echo $title; ?></div>
             <div class="article">
-                <?php echo $text; ?>
-<br />
+<?php echo $text; ?>
             </div>
 <?php
     $suiv = $page_id + 1;
 
     // On demande à la base si une page suivante existe
-    $req = $pdo->prepare("SELECT * FROM music WHERE id = ?");
-    $req->execute([$suiv]);
+    $musics = new Musics();
 
-    $page_suiv = $req->fetch();
+    $page_suiv = $musics->find($suiv);
+
     if (!empty($page_suiv)) {
-        $number = $page_suiv->id;
+        $number = $page_suiv['music_id'];
     }
-    //$number = $page_suiv->id;
 
     if(isset($number) && $number==$suiv) {
 ?>

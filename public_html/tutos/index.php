@@ -2,12 +2,13 @@
     session_start();
 
     $lang = "fr";
-    // On se connecte à la base de données
-    require('../includes/inc_db_connexion.php');
+    $og_type = "article";
+
+    // On charge les dépendances
+    require '../App/Loader.php';
+
     // Gestion du cookie "remember"
-    require('../includes/inc_gestion_cookie.php');
-    // On prepare la requête
-    $req = $pdo->prepare("SELECT * FROM tutos WHERE id = ?");
+    require '../includes/inc_gestion_cookie.php';
     
     // Si page existe
     if(!empty($_GET['page'])) {
@@ -16,25 +17,27 @@
     } else {
         // Pour la page d'accueil
         $page_id = "1";
-
     }
-        $req->execute([$page_id]);
-        $page = $req->fetch();
 
-        $id = $page->id;
-        $title = $page->title;
-        $date = $page->date;
-        $text = $page->text;
+    $tutos = new Tutos();
 
-        $og_type = "article";
+    $page = $tutos->find($page_id);
+
+    $id = $page['tuto_id'];
+    $title = $page['tuto_title'];
+    $text = $page['tuto_content'];
+
     // L'en-tête
-    require('../includes/inc_head.php');
+    require '../includes/inc_head.php';
+
     // Le Header
-    require('includes/inc_header.php');
+    require 'includes/inc_header.php';
+
     // Le Menu
-    require('../includes/inc_menu_fr.php');
+    require '../includes/inc_menu_fr.php';
+
     // La page
-    require('includes/inc_page_tuto_page.php');
+    require 'includes/inc_page_tuto_page.php';
+
     // Le Footer
-    require('../includes/inc_footer.php');
-?>
+    require '../includes/inc_footer.php';

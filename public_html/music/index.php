@@ -1,13 +1,16 @@
 <?php // On démarre la session AVANT d'écrire du code HTML
     session_start();
+
+    $og_type = "article";
+
     // Gestion des langues
-    require('../includes/inc_gestion_lang.php');
-    // On se connecte à la base de données
-    require('../includes/inc_db_connexion.php');
+    require '../includes/inc_gestion_lang.php';
+
+    // On charge les dépendances
+    require '../App/Loader.php';
+
     // Gestion du cookie "remember"
-    require('../includes/inc_gestion_cookie.php');
-    // On prepare la requête 
-    $req = $pdo->prepare("SELECT * FROM music WHERE id = ?");
+    require '../includes/inc_gestion_cookie.php';
 
     // Si page existe
     if(!empty($_GET['page'])) {
@@ -18,14 +21,16 @@
         $page_id = "1";
 
     }
-        $req->execute([$page_id]);
-        $page = $req->fetch();
 
-        $id = $page->id;
-        $title = $page->title;
-        $text = $page->text;
+    $musics = new Musics();
 
-        $og_type = "article";
+    $page = $musics->find($page_id);
+
+    $id = $page['music_id'];
+    $title = $page['music_title'];
+    $text = $page['music_content'];
+
+
     // L'en-tête
     require('../includes/inc_head.php');
     // Le Header

@@ -4,13 +4,14 @@
                 <div class="blog">
 <?php echo $text; ?>
 <?php
-        $select = $pdo->query("SELECT id, title FROM blog");
-        $pages  = $select->fetchAll();
+        $articles = new Articles();
+
+        $pages  = $articles->findAll();
 ?>
                     <h1>Sommaire</h1>
                     <ul>
 <?php foreach($pages as $page) { ?>
-                        <li><a href="/blog/?page=<?php echo $page->id; ?>"><?php echo $page->title; ?></a></li>
+                        <li><a href="/blog/?page=<?php echo $page['article_id']; ?>"><?php echo $page['article_title']; ?></a></li>
 <?php } ?>
                     </ul>
                 </div>

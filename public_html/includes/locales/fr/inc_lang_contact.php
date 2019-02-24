@@ -1,17 +1,23 @@
 <?php
+
     // reCaptcha
 	$captcha = new Recaptcha('6LdqiHsUAAAAAG9EggYyEYTl-QvUpmv9bbhu1LUT', '6LdqiHsUAAAAAFbCohv322aAlTcaFFEAgUGLiyXS');
     $ipVisiteur = $captcha->get_ip();
+
     // On verifie si le formulaire a bien été rempli
     if(!empty($_POST['Envoyer']) && ($_POST['Envoyer'] == 'Envoyer')) {
         if(!empty($_POST['firstname']) && (!empty($_POST['lastname']))
         && (!empty($_POST['email'])) && (!empty($_POST['subject']))
         && (!empty($_POST['subject'])) && (!empty($_POST['message']))) {
+
         	// On vérifie le captcha
             if($captcha->checkCode($_POST['g-recaptcha-response'], $ipVisiteur) === false){
+
             	// Le captcha ne semble pas valide.
             	$_SESSION['flash']['error'] = "Erreur captcha !";
+
         	} else {
+
         		// Le captcha semble valide.
         		// On crée les variables
                 $firstname  = $_POST['firstname'];
@@ -20,27 +26,36 @@
                 $subject    = $_POST['subject'];
                 $message    = nl2br($_POST['message']);
                 $send       = true;
+
         	}
+
         } else {
+
             $_SESSION['flash']['error'] = "Vous devez remplir correctement tous les champs !";
+
         }
     }
-?>
-<?php
+
     // Si tout est correct,
     if(!empty($send) && ($send == true)) {
-        // On inscrit le message dans la base de données
-        $pdo->query('INSERT INTO messages (prenom, nom, email, sujet, message)
-        VALUES ("' . $firstname .'", "' . $lastname
-        . '", "' . $email . '", "' . $subject
-        . '", "' . $message . '")');
 
-            // Puis on envoie le formulaire par mail
-            $to       = "noahseed@hotmail.com";
-            $frommail = "sebastien@rondeau-cameira.fr";
-            $fromname = "Sébastien RONDEAU CAMEIRA";
+    	// On inscrit le message dans la base
+    	$msg = new Message();
+    	$msg->message_firstname = $firstname;
+    	$msg->message_lastname = $lastname;
+    	$msg->message_email = $email;
+    	$msg->message_subject = $subject;
+    	$msg->message_content = $message;
 
-            $htmlmess = "<html>\r\n
+    	$messages = new Messages();
+    	$messages->add($msg);
+
+        // Puis on envoie le formulaire par mail
+        $to       = "noahseed@hotmail.com";
+        $frommail = "sebastien@rondeau-cameira.fr";
+        $fromname = "Sébastien RONDEAU CAMEIRA";
+
+        $htmlmess = "<html>\r\n
     <head>\r\n
         <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>\r\n
         <title>".$subject."</title>\r\n
@@ -90,10 +105,10 @@
             $headers .= "Disposition-Notification-To: ".$email." \r\n";
             // Message de Priorité haute
             // -------------------------
-            $headers .= "X-Priority: 1  \r\n";
-            $headers .= "X-MSMail-Priority: High \r\n";
+            //$headers .= "X-Priority: 1  \r\n";
+            //$headers .= "X-MSMail-Priority: High \r\n";
 
-        mail($to, "[Site Web] $subject", $htmlmess, $headers);
+        mail($to, $subject, $htmlmess, $headers);
 ?>
         <article>
             <div class="title"><?php echo $title; ?></div>

@@ -24,12 +24,12 @@
     $suiv = $page_id + 1;
 
     // On demande à la base si une page suivante existe
-    $req = $pdo->prepare("SELECT * FROM tutos WHERE id = ?");
-    $req->execute([$suiv]);
+    $tutos = new Tutos();
 
-    $page_suiv = $req->fetch();
+    $page_suiv = $tutos->find($suiv);
+
     if (!empty($page_suiv)) {
-        $number = $page_suiv->id;
+        $number = $page_suiv['tuto_id'];
     }
 
     if(isset($number) && $number==$suiv) {

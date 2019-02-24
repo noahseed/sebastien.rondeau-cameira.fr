@@ -1,17 +1,24 @@
-<?php require ('includes/functions.php'); ?>
-<?php // Traitement du formulaire
+<?php
+
+	// Traitement du formulaire
     if(!empty($_POST) && empty($_POST['lang'])) {
         $errors = array();
 
+    	$users = new Users();
+
         if(empty($_POST['username'])) {
+
             $errors['username'] = "Vous devez entrer un pseudo.";
+
         } else {
+
             if(!preg_match('/^[a-zA-Z0-9_]+$/', $_POST['username'])) {
+
                 $errors['username'] = "Votre pseudo n'est pas valide.";
+
             } else {
-                $req = $pdo->prepare("SELECT id FROM users WHERE username = ?");
-                $req->execute([$_POST['username']]);
-                $user = $req->fetch();
+
+            	$user = $users->findUser($_POST['username']);
 
                 if($user) {
                     $errors['username'] = "Ce pseudo est déjà pris.";
@@ -20,14 +27,18 @@
         }
 
         if(empty($_POST['email'])) {
+
             $errors['email'] = "Vous devez entrer une adresse email.";
+
         } else {
+
             if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+
                 $errors['email'] = "Votre adresse email n'est pas valide";
+
             } else {
-                $req = $pdo->prepare("SELECT id FROM users WHERE email = ?");
-                $req->execute([$_POST['email']]);
-                $email = $req->fetch();
+
+            	$email = $users->findUser($_POST['username']);
 
                 if($email) {
                     $errors['email'] = "Cette adresse email est déjà dans la base de données.";
@@ -45,14 +56,18 @@
 
         // Si le formulaire est correct
         if(empty($errors)) {
-            $req = $pdo->prepare("INSERT INTO users SET username = ?, email = ?, password = ?, confirmation_token = ?");
 
             $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
             $token    = str_random(60);
 
-            $req->execute([$_POST['username'], $_POST['email'], $password, $token]);
+        	$user = new User();
 
-            $user_id = $pdo->lastInsertId();
+        	$user->user_username = $_POST['username'];
+        	$user->user_email = $_POST['email'];
+        	$user->user_password = $password;
+        	$user->user_confirmation_token = $token;
+
+            $user_id = $users->add($user); //$pdo->lastInsertId();
 
             // Puis on envoie le mail de confirmation
             $subject  = "Merci de confirmer votre inscription";

@@ -4,13 +4,16 @@
                 <div class="tutos">
 <?php echo $text; ?>
 <?php
-        $select = $pdo->query("SELECT id, title FROM tutos");
-        $tutos  = $select->fetchAll();
+
+        $tutoriels = new Tutos();
+
+        $tutos  = $tutoriels->findAll();
+
 ?>
                     <h1>Sommaire</h1>
                     <ul>
 <?php foreach($tutos as $tuto) { ?>
-                        <li><a href="/tutos/?page=<?php echo $tuto->id; ?>"><?php echo $tuto->title; ?></a></li>
+                        <li><a href="/tutos/?page=<?php echo $tuto['tuto_id']; ?>"><?php echo $tuto['tuto_title']; ?></a></li>
 <?php } ?>
                     </ul>
                 </div>

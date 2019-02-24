@@ -3,22 +3,14 @@
     session_start();
 
     // Gestion des langues
-    require('includes/inc_gestion_lang.php');
+    require 'includes/inc_gestion_lang.php';
 
-    // On se connecte à la base de données
-    require('includes/inc_db_connexion.php');
+    // On charge les dépendances
+    require './App/Loader.php';
 
     // Gestion du cookie "remember"
-    require('includes/inc_gestion_cookie.php');
+    require 'includes/inc_gestion_cookie.php';
 
-    // Choix de la base en fonction de la langue
-    if($lang == 'fr') {
-        $req = $pdo->prepare("SELECT * FROM site_fr WHERE slug = :slug");
-    } elseif($lang == 'en') {
-        $req = $pdo->prepare("SELECT * FROM site_en WHERE slug = :slug");
-    } elseif($lang == 'pt') {
-        $req = $pdo->prepare("SELECT * FROM site_pt WHERE slug = :slug");
-    }
 
     if (!empty($_GET['page'])) {
         $slug = $_GET['page'];
@@ -29,12 +21,20 @@
         $og_type = "website";
     }
 
-    // On récupère le contenu de la base
-    $req->execute(['slug' => $slug]);
-    $page = $req->fetch();
+    $pages = new Pages();
 
-    $title = $page->title;
-    $text = $page->text;
+    // Choix de la base en fonction de la langue
+    if($lang == 'fr') {
+        $page = $pages->findFr($slug);
+    } elseif($lang == 'en') {
+        $page = $pages->findEn($slug);
+    } elseif($lang == 'pt') {
+        $page = $pages->findPt($slug);
+    }
+
+    // On récupère le contenu de la base
+    $title = $page['page_title'];
+    $text = $page['page_content'];
 
     // Si la base ne renvoie rien
     if(empty($title)) {
@@ -43,12 +43,12 @@
     }
 
     // L'en-tête
-    require('includes/inc_head.php');
+    require 'includes/inc_head.php';
     // Le Header
-    require('includes/inc_header.php');
+    require 'includes/inc_header.php';
     // Le Menu
-    require('includes/inc_block_menu.php');
+    require 'includes/inc_block_menu.php';
     // Les pages du site
-    require('includes/inc_page_'.$slug.'.php');
+    require 'includes/inc_page_'.$slug.'.php';
     // Le Footer
-    require('includes/inc_footer.php');
+    require 'includes/inc_footer.php';

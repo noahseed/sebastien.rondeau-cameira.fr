@@ -4,13 +4,16 @@
                 <div class="music">
 <?php echo $text; ?>
 <?php
-        $select = $pdo->query("SELECT id, title FROM music ORDER BY title");
-        $musics  = $select->fetchAll();
+
+    $musiques = new Musics();
+
+    $musics = $musiques->findAll();
+
 ?>
                     <h1>Sommaire</h1>
                     <ul>
 <?php foreach($musics as $music) { ?>
-                        <li><a href="/music/?page=<?php echo $music->id; ?>"><?php echo $music->title; ?></a></li>
+                        <li><a href="/music/?page=<?php echo $music['music_id']; ?>"><?php echo $music['music_title']; ?></a></li>
 <?php } ?>
                     </ul>
                 </div>

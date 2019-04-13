@@ -4,10 +4,12 @@
         $parts = explode('==', $remember_token);
         $user_id = $parts[0];
 
+        $users = new Users();
+
         $user = $users->find($user_id);
 
         if($user) {
-            $expected = $user_id . '==' . $user['remember_token'] . sha1($user_id . 'seb');
+            $expected = $user_id . '==' . $user['user_remember_token'] . sha1($user_id . 'seb');
             if($expected == $remember_token) {
                 $_SESSION['auth'] = $user;
                 setcookie('remember', $remember_token, time() + 60 * 60 * 24 * 7);

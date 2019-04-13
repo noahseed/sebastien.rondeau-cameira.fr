@@ -23,8 +23,8 @@
                 $users->rememberCookie($remember_token, $user['user_id']);
             }
 
-            //header('Location: /?page=account');
-            //exit();
+            header('Location: /?page=account');
+            exit();
 
         } else {
             $_SESSION['flash']['error'] = "Identifiant ou mot de passe incorrect.";

@@ -22,27 +22,43 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="icon" type="image/png" href="/favicon.png">
-<?php //---- date en français  
+<?php
+
     if(!empty($_GET['page']) && ($_GET['page'] == 'add' || $_GET['page'] == 'modify')) {
+
 ?>
     <script src="https://cdn.ckeditor.com/ckeditor5/11.1.1/classic/ckeditor.js"></script>
-<?php } ?>
-<?php //---- date en français  
-    if($lang == 'fr') {
-?>
-    <script src="/js/locales/fr/date_heure.js"></script>
-<?php //---- date en anglais
-    } elseif($lang == 'en') {
+<?php
+
+    }
+
+    if($lang == 'en') {
+
 ?>
     <script src="/js/locales/en/date_heure.js"></script>
-<?php //---- date en portugais
+<?php
+
     } elseif($lang == 'pt') {
+
 ?>
     <script src="/js/locales/pt/date_heure.js"></script>
-<?php } ?>
-<?php //---- reCaptcha
+<?php
+
+    } else {
+
+?>
+    <script src="/js/locales/fr/date_heure.js"></script>
+<?php
+
+    }
+
     if(!empty($_GET['page']) && $_GET['page'] == 'contact') {
 ?>
     <script src='https://www.google.com/recaptcha/api.js'></script>
-<?php } ?>
+<?php
+
+    }
+
+?>
 </head>
+<body>

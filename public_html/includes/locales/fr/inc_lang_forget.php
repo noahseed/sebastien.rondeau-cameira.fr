@@ -1,17 +1,14 @@
-<?php require('includes/functions.php'); ?>
 <?php
     if(!empty($_POST) && !empty($_POST['email'])) {
+
+        $users = new Users();
+
         // Si une adresse email est entrée, on regarde dans la base si elle s'y trouve
-        $req = $pdo->prepare("SELECT * FROM users WHERE email = ? AND confirmed_at IS NOT NULL");
-        $req->execute([$_POST['email']]);
-        $user = $req->fetch();
+        $user = $users->findUser($_POST['email']);
 
         if($user) {
             $reset_token = str_random(60);
-            $req = $pdo->prepare("UPDATE users SET reset_token = ?, reset_at = NOW() WHERE id = ?");
-            $req->execute([$reset_token, $user->id]);
-
-            $_SESSION['flash']['success'] = "Les instructions pour la réinitialisation de votre mot de passe vous ont été envoyées par email.";
+            $users->resetToken($reset_token, $user['user_id']);
 
             // On envoie le mail de réinitialisation du mot de passe 
             $subject  = "Réinitialisation du mot de passe";
@@ -24,7 +21,7 @@
         <title>".$subject."</title>\r\n
     </head>\r\n
         <h3>Afin de réinitialiser votre mot de passe, merci de cliquer sur le lien suivant :</h3>\r\n
-        <a href=\"https://sebastien.rondeau-cameira.fr/?page=reset&id={$user->id}&token=$reset_token\">Réinitialiser mon mot de passe</a>\r\n
+        <a href=\"https://sebastien.rondeau-cameira.fr/?page=reset&id={$user['user_id']}&token=$reset_token\">Réinitialiser mon mot de passe</a>\r\n
     </body>\r\n
 </html>\r\n";
 
@@ -39,7 +36,7 @@
             // Puis on envoie le mail de confirmation
             if(mail($to, "$subject", $htmlmess, $headers)) {
 
-                $_SESSION['flash']['success'] = "Un email de confirmation vous a été envoyé.";
+                $_SESSION['flash']['success'] = "Les instructions pour la réinitialisation de votre mot de passe vous ont été envoyées par email.";
 
             	header('Location: /?page=login');
             	exit();

@@ -7,7 +7,7 @@
     }
 ?>
 <?php // Si l'utilisateur n'est PAS un VIP
-    if($_SESSION['auth']->is_vip == FALSE) {
+    if($_SESSION['auth']['user_is_vip'] == FALSE) {
         $_SESSION['flash']['error'] = "Vous n'êtes pas un VIP.";
         header('Location: /?page=account');
         exit();
@@ -18,13 +18,14 @@
             <div class="article">
 <?php echo $text; ?>
 <?php
-        $select = $pdo->query("SELECT id, title FROM diary");
-        $pages  = $select->fetchAll();
+    $diaries = new Diaries();
+
+    $pages = $diaries->findAll();
 ?>
                 <h1>Sommaire</h1>
                 <ul>
 <?php foreach($pages as $page) { ?>
-                    <li><a href="/diary/?page=<?php echo $page->id; ?>"><?php echo $page->title; ?></a></li>
+                    <li><a href="/diary/?page=<?php echo $page['diary_id']; ?>"><?php echo $page['diary_title']; ?></a></li>
 <?php } ?>
                 </ul>
             </div>

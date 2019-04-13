@@ -21,7 +21,7 @@
                         <ul>
 <?php if(isset($_SESSION['auth'])): ?>
 <?php // Si l'utilisateur est un VIP
-        if($_SESSION['auth']->is_vip == TRUE) {
+        if($_SESSION['auth']['user_is_vip'] == TRUE) {
 ?>
                             <li><a href="/?page=diary">Journal</a></li>
 <?php

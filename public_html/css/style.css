@@ -15,16 +15,6 @@
 * {
     box-sizing: border-box;
 }
-body {
-    margin: 0 auto;
-    padding-top: 70px;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: top;
-    background-size: 100%;
-    background-color: var(--dark);
-    font-family: var(--font-default);
-}
 a, a:visited {
     color: var(--light);
     text-decoration: none;
@@ -41,6 +31,16 @@ article {
     margin-left: 260px;
     margin-right: 30px;
 }
+body {
+    margin: 0 auto;
+    padding-top: 70px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
+    background-size: 100%;
+    background-color: var(--dark);
+    font-family: var(--font-default);
+}
 footer {
     font-size: 20px;
     position: fixed;
@@ -55,7 +55,7 @@ footer {
     text-shadow: 2px 2px 4px var(--dark);
     text-align: center;
 }
-footer a, a:visited {
+footer a, footer a:visited {
     color: var(--light);
     font-weight: bold;
     font-style: italic;
@@ -150,6 +150,12 @@ nav a, nav a:visited {
 nav a:hover {
     color: yellowgreen;
     text-decoration: underline;
+}
+td {
+    vertical-align: top;
+}
+th {
+    padding-left: 20px;
 }
 #logo-txt {
     position: absolute;
@@ -282,14 +288,31 @@ nav a:hover {
     border-radius: 8px;
     box-shadow: 2px 2px 4px var(--dark);
 }
-.menu{
-    position: fixed;
-    width: 250px;
+.article {
+    margin-bottom: 50px;
+    color: whitesmoke;
+    font-size: 20px;
+    text-align: justify;
+    text-shadow: 2px 2px 4px var(--dark);
+}
+.article a, .article a:visited {
+    color: var(--light);
+    font-weight: bold;
+    font-style: italic;
+    font-size: 20px;
+}
+.article a:hover {
+    color: yellowgreen;
+    text-decoration: underline;
 }
 .blog {
     background-image: url('/images/write.jpg');
     background-repeat: no-repeat;
     background-position: right top;
+}
+.menu{
+    position: fixed;
+    width: 250px;
 }
 .tutos {
     background-image: url('/images/tutos.png');
@@ -355,23 +378,6 @@ nav a:hover {
     font-size: 55px;
     font-weight: bold;
     text-shadow: 2px 2px 4px var(--dark);
-}
-.article {
-    margin-bottom: 50px;
-    color: whitesmoke;
-    font-size: 22px;
-    text-align: justify;
-    text-shadow: 2px 2px 4px var(--dark);
-}
-.article a, a:visited {
-    color: whitesmoke;
-    font-weight: bold;
-    font-style: italic;
-    font-size: 26px;
-}
-.article a:hover {
-    color: yellowgreen;
-    text-decoration: underline;
 }
 .center {
     text-align: center;

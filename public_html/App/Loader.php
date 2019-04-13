@@ -3,6 +3,8 @@
 require 'Db.php';
 require 'Classes/Article.php';
 require 'Classes/Articles.php';
+require 'Classes/Diary.php';
+require 'Classes/Diaries.php';
 require 'Classes/Message.php';
 require 'Classes/Messages.php';
 require 'Classes/Music.php';

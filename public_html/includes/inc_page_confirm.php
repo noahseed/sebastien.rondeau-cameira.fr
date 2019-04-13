@@ -3,14 +3,12 @@
     $user_id = $_GET['id'];
     $token = $_GET['token'];
 
-    $req = $pdo->prepare('SELECT * FROM users WHERE id = ?');
-    $req->execute([$user_id]);
+    $users = new Users();
 
-    $user = $req->fetch();
+    $user = $users->find($user_id);
 
-    if($user && $user->confirmation_token == $token){
-        $req = $pdo->prepare('UPDATE users SET confirmation_token = NULL, confirmed_at = NOW() WHERE id = ?');
-        $req->execute([$user_id]);
+    if($user && $user['user_confirmation_token'] == $token){
+        $users->confirmationToken($user_id);
 
         $_SESSION['auth'] = $user;
         $_SESSION['flash']['success'] = "Votre compte a bien été validé.";

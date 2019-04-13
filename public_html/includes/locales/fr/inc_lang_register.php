@@ -4,7 +4,9 @@
     if(!empty($_POST) && empty($_POST['lang'])) {
         $errors = array();
 
-    	$users = new Users();
+    	//$user = new User();
+
+        $users = new Users();
 
         if(empty($_POST['username'])) {
 
@@ -38,7 +40,7 @@
 
             } else {
 
-            	$email = $users->findUser($_POST['username']);
+            	$email = $users->findUser($_POST['email']);
 
                 if($email) {
                     $errors['email'] = "Cette adresse email est déjà dans la base de données.";
@@ -62,12 +64,17 @@
 
         	$user = new User();
 
-        	$user->user_username = $_POST['username'];
+            $user->user_username = $_POST['username'];
         	$user->user_email = $_POST['email'];
         	$user->user_password = $password;
         	$user->user_confirmation_token = $token;
 
-            $user_id = $users->add($user); //$pdo->lastInsertId();
+            $users->add($user); //$pdo->lastInsertId();
+
+            $users = new Users();
+
+            $user1 = $users->findUser($_POST['email']);
+            $user_id = $user1->user_id;
 
             // Puis on envoie le mail de confirmation
             $subject  = "Merci de confirmer votre inscription";
@@ -85,7 +92,7 @@
         border-color: whitesmoke; background-color: #4d4d4d; text-shadow: 2px 2px 4px black; box-shadow: 5px 5px 7px black;'>\r\n
             <tr>\r\n
                 <td><a href='https://sebastien.rondeau-cameira.fr'><img src='https://sebastien.rondeau-cameira.fr/images/aum_blanc.png'
-                width='70' height='70' /></a></td>\r\n
+                width='70px' height='70px'></a></td>\r\n
                 <td><h1>sebastien.rondeau-cameira.fr</h1></td>\r\n
             </tr>\r\n
         </table>\r\n
@@ -140,7 +147,7 @@
                             <th><label>Pseudo</label></th>
                             <td><input type="text" name="username" placeholder="Votre pseudo" value="<?php if(!empty($_POST['username'])) {
                                 echo($_POST['username']);
-                            } ?>" /></td> <!-- required -->
+                            } ?>" /></td>
                         </tr>
                         <tr>
                             <th><label>Email</label></th>

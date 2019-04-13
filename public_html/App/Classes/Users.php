@@ -19,7 +19,7 @@ class Users extends Db
         FROM `users`
         WHERE `user_username` = :username
         OR `user_email` = :username
-        AND `confirmed_at` IS NOT NULL";
+        AND `user_confirmed_at` IS NOT NULL";
 
         $stmt = $this->pdo->prepare($sql);
 
@@ -73,6 +73,42 @@ class Users extends Db
         return $result;
     }
 
+    public function findUser(string $username)
+    {
+        $sql = "SELECT
+        `user_id`,
+        `user_username`,
+        `user_email`,
+        `user_password`,
+        `user_confirmation_token`,
+        `user_confirmed_at`,
+        `user_reset_token`,
+        `user_reset_at`,
+        `user_remember_token`,
+        `user_is_admin`,
+        `user_is_vip`
+        FROM `users`
+        WHERE `user_username` = :user_username
+        OR `user_email` = :user_username";
+
+        $stmt = $this->pdo->prepare($sql);
+
+        $stmt->bindValue(
+            ':user_username',
+            $username,
+            PDO::PARAM_INT
+        );
+
+        if($stmt->execute())
+        {
+            $result = $stmt->fetch();
+        }
+
+        $stmt->closeCursor();
+
+        return $result;
+    }
+
     public function findAll()
     {
         $sql = "SELECT
@@ -102,7 +138,7 @@ class Users extends Db
         return $result;
     }
 
-    public function add(User $user) : int
+    public function add(User $user)
     {
         $sql = "INSERT INTO
         `users`
@@ -117,10 +153,63 @@ class Users extends Db
 
         $stmt = $this->pdo->prepare($sql);
 
-        $stmt->bindValue(':username', strip_tags($user->user_username));
-        $stmt->bindValue(':email', strip_tags($user->user_email));
-        $stmt->bindValue(':password', strip_tags($user->user_password));
-        $stmt->bindValue(':confirmation_token', strip_tags($user->user_confirmation_token));
+        $stmt->bindValue(':username', $user->user_username);
+        $stmt->bindValue(':email', $user->user_email);
+        $stmt->bindValue(':password', $user->user_password);
+        $stmt->bindValue(':confirmation_token', $user->user_confirmation_token);
+
+        $result = 0;
+
+        if($stmt->execute())
+        {
+            $result = $stmt->rowCount();
+        }
+
+        $stmt->closeCursor();
+
+        return $result;
+    }
+
+    public function resetToken(string $reset_token, int $user_id) : int
+    {
+        $sql = "UPDATE
+        `users`
+        SET 
+        `user_reset_token` = :reset_token,
+        `user_reset_at` = NOW()
+        WHERE
+        `user_id` = :user_id";
+
+        $stmt = $this->pdo->prepare($sql);
+
+        $stmt->bindValue(':reset_token', $reset_token);
+        $stmt->bindValue(':user_id', $user_id);
+
+        $result = 0;
+
+        if($stmt->execute())
+        {
+            $result = $stmt->rowCount();
+        }
+
+        $stmt->closeCursor();
+
+        return $result;
+    }
+
+    public function confirmationToken(int $user_id) : int
+    {
+        $sql = "UPDATE
+        `users`
+        SET 
+        `user_confirmation_token` = NULL,
+        `user_confirmed_at` = NOW()
+        WHERE
+        `user_id` = :user_id";
+
+        $stmt = $this->pdo->prepare($sql);
+
+        $stmt->bindValue(':user_id', $user_id);
 
         $result = 0;
 

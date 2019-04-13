@@ -1,9 +1,9 @@
-<?php // Redirection si déjà connecté
+<?php
+    // Redirection si déjà connecté
     if(isset($_SESSION['auth'])) {
         header('Location: /?page=account');
         exit();
     }
-
 
     // Traitement du formulaire
     if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST['password'])) {
@@ -23,8 +23,8 @@
                 $users->rememberCookie($remember_token, $user['user_id']);
             }
 
-            header('Location: /?page=account');
-            exit();
+            //header('Location: /?page=account');
+            //exit();
 
         } else {
             $_SESSION['flash']['error'] = "Identifiant ou mot de passe incorrect.";

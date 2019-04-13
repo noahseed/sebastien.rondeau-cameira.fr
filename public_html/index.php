@@ -3,13 +3,13 @@
     session_start();
 
     // Gestion des langues
-    require 'includes/inc_gestion_lang.php';
+    require './includes/inc_gestion_lang.php';
 
     // On charge les dépendances
     require './App/Loader.php';
 
     // Gestion du cookie "remember"
-    require 'includes/inc_gestion_cookie.php';
+    require './includes/inc_gestion_cookie.php';
 
 
     if (!empty($_GET['page'])) {
@@ -24,12 +24,12 @@
     $pages = new Pages();
 
     // Choix de la base en fonction de la langue
-    if($lang == 'fr') {
-        $page = $pages->findFr($slug);
-    } elseif($lang == 'en') {
+    if($lang == 'en') {
         $page = $pages->findEn($slug);
     } elseif($lang == 'pt') {
         $page = $pages->findPt($slug);
+    } else {
+        $page = $pages->findFr($slug);
     }
 
     // On récupère le contenu de la base

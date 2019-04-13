@@ -24,15 +24,13 @@
     $suiv = $page_id + 1;
 
     // On demande à la base si une page suivante existe
-    $req = $pdo->prepare("SELECT * FROM diary WHERE id = ?");
-    $req->execute([$suiv]);
+    $page_suiv = $diaries->find($suiv);
 
-    $page_suiv = $req->fetch();
     if (!empty($page_suiv)) {
-        $number = $page_suiv->id;
+        $number = $page_suiv['diary_id'];
     }
 
-    if(isset($number) && $number==$suiv) {
+    if(isset($number) && $number == $suiv) {
 ?>
             <div id="fleche-droite"><a href="/diary/?page=<?php echo $suiv; ?>"><img src="/images/pixel.gif" alt="Page Suivante"></a></div>
 <?php } ?>

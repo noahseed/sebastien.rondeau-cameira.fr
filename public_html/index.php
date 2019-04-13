@@ -3,13 +3,13 @@
     session_start();
 
     // Gestion des langues
-    require './includes/inc_gestion_lang.php';
+    require 'includes/inc_gestion_lang.php';
 
     // On charge les dépendances
-    require './App/Loader.php';
+    require 'App/Loader.php';
 
     // Gestion du cookie "remember"
-    require './includes/inc_gestion_cookie.php';
+    require 'includes/inc_gestion_cookie.php';
 
 
     if (!empty($_GET['page'])) {

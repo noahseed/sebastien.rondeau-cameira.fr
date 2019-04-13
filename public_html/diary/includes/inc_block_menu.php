@@ -19,7 +19,7 @@
                 <ul>
 <?php if(isset($_SESSION['auth'])): ?>
 <?php // Si l'utilisateur est un VIP
-        if($_SESSION['auth']->is_vip == TRUE) {
+        if($_SESSION['auth']['user_is_vip'] == TRUE) {
 ?>
                     <li><a href="/?page=diary">Journal</a></li>
 <?php
@@ -32,7 +32,4 @@
 <?php endif; ?>
                 </ul>
             </nav>
-            <div style="text-align:center;padding:1em 0;">
-                <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=fr&size=small&timezone=Europe%2FParis" width="100%" height="90" frameborder="0" seamless></iframe>
-            </div>
         </div>

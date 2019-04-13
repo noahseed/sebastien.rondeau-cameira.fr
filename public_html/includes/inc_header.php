@@ -1,4 +1,3 @@
-<body>
     <header>
         <a href="/">
             <img src="/images/aum_blanc.png" alt="Logo" id="logo-img">

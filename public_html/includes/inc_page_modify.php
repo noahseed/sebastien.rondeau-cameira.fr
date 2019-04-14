@@ -65,11 +65,19 @@
                 exit();
 
             } elseif($_GET['type'] == 'diary') {
-                $pdo->query("UPDATE diary SET title = '$new_title', content = '$new_content' WHERE id = $id");
+                $diaries = new Diaries();
+                $diary = new Diary();
 
+                $diary->diary_id = $id;
+                $diary->diary_title = $new_title;
+                $diary->diary_content = $new_content;
+
+                $diaries->edit($diary);
                 $_SESSION['flash']['success'] = "La page a bien été modifiée.";
+
                 header('Location: /?page=account');
                 exit();
+
             } else {
                 // Si le type n'existe pas
                 $_SESSION['flash']['error'] = "Le type n'est pas reconnu.";
@@ -252,42 +260,41 @@
             
             if(!isset($_GET['id'])) { // Si l'id de la musique n'a PAS été précisé
 
-                $select = $pdo->query("SELECT id, title FROM diary");
-                $pages  = $select->fetchAll();
-            
+                $diaries = new Diaries();
+                $pages = $diaries->findAll();
 ?>
                 <h1>Sélectionnez la page à modifier</h1>
                 <ul>
 <?php foreach($pages as $page) { ?>
-                    <li><a href="/?page=modify&type=diary&id=<?php echo $page->id; ?>"><?php echo $page->title; ?></a></li>
+                    <li><a href="/?page=modify&type=diary&id=<?php echo $page['diary_id']; ?>"><?php echo $page['diary_title']; ?></a></li>
 <?php } ?>
                 </ul>
 <?php
             } else { // Si l'id de la page a été précisé
                 $id = $_GET['id'];
-                $req = $pdo->query("SELECT * FROM diary WHERE id = $id");
-                $diary = $req->fetch();
+                $diaries = new Diaries();
+                $diary = $diaries->find($id);
 ?>
                 <form method="POST">
                     <table>
                         <tr>
                             <th>ID</th>
-                            <td><?php echo $diary->id; ?></td>
+                            <td><?php echo $diary['diary_id']; ?></td>
                         </tr>
                         <tr>
                             <th><label for="title">Titre de la page</label></th>
-                            <td><input type="text" name="title" id="title" value="<?php echo $diary->title; ?>" /></td>
+                            <td><input type="text" name="title" id="title" value="<?php echo $diary['diary_title']; ?>"></td>
                         </tr>
                         <tr>
                             <th><label for="content">Texte</label></th>
-                            <td><textarea name="content" id="editor"><?php echo $diary->content; ?></textarea></td>
+                            <td><textarea name="content" id="editor"><?php echo $diary['diary_content']; ?></textarea></td>
                         </tr>
                         <tr>
                             <th></th>
                             <td><button type="submit">Modifier</button></td>
                         </tr>
                     </table>
-                    <input type="hidden" name="id" value="<?php echo $diary->id; ?>" />
+                    <input type="hidden" name="id" value="<?php echo $diary['diary_id']; ?>" />
                     <script>
                         ClassicEditor
                             .create( document.querySelector( '#editor' ) )

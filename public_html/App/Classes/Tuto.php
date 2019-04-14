@@ -3,9 +3,9 @@
 	{
 		public $tuto_id;
 
-		public $tuto_title;
-
 		public $tuto_date;
+
+		public $tuto_title;
 
         public $tuto_content;
         

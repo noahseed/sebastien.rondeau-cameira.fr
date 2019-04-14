@@ -45,7 +45,8 @@
                 header('Location: /?page=account');
                 exit();
             } elseif($_GET['type'] == 'diary') {
-                $pdo->query("DELETE FROM diary WHERE id = $id");
+                $diaries = new Diaries();
+                $diaries->delete($id);
 
                 $_SESSION['flash']['success'] = "La page a bien été supprimée.";
                 header('Location: /?page=account');
@@ -94,8 +95,6 @@
 ?>
                 </ul>
 <?php
-            } else { // Si l'id du blog a été précisé
-
             }
         } elseif($_GET['type'] == 'tuto') {
             
@@ -114,8 +113,6 @@
 ?>
                 </ul>
 <?php
-            } else { // Si l'id du tuto a été précisé
-
             }
         } elseif($_GET['type'] == 'music') {
             
@@ -134,51 +131,22 @@
 ?>
                 </ul>
 <?php
-            } else { // Si l'id de la musique a été précisé
-
             }
         } elseif($_GET['type'] == 'diary') {
             
             if(!isset($_GET['id'])) { // Si l'id du tuto n'a PAS été précisé
 
-                $req = $pdo->query("SELECT id, title FROM diary");
-                $pages  = $req->fetchAll();
+                $diaries = new Diaries();
+                $pages = $diaries->findAll();
 ?>
                 <h1>Sélectionnez la page à supprimer</h1>
                 <ul>
 <?php foreach($pages as $page) { ?>
-                    <li><a href="/?page=delete&type=diary&id=<?php echo $page->id; ?>" onclick="return confirm('Voulez-vous vraiment supprimer cette page ?');"><?php echo $page->title; ?></a></li>
+                    <li><a href="/?page=delete&type=diary&id=<?php echo $page['diary_id']; ?>" onclick="return confirm('Voulez-vous vraiment supprimer cette page ?');"><?php echo $page['diary_title']; ?></a></li>
 <?php } ?>
                 </ul>
 <?php
-            } else { // Si l'id de la page a été précisé
-                $id = $_GET['id'];
-                $req = $pdo->query("SELECT * FROM diary WHERE id = $id");
-                $diary = $req->fetch();
-?>
-                <form method="POST">
-                    <table>
-                        <tr>
-                            <th>ID</th>
-                            <td><?php echo $diary->id; ?></td>
-                        </tr>
-                        <tr>
-                            <th><label for="title">Titre de la page</label></th>
-                            <td><input type="text" name="title" id="title" value="<?php echo $diary->title; ?>" /></td>
-                        </tr>
-                        <tr>
-                            <th><label for="text">Texte</label></th>
-                            <td><textarea name="text" id="text" rows="30" cols="80"><?php echo $diary->text; ?></textarea></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td><button type="submit">Modifier</button></td>
-                        </tr>
-                    </table>
-                    <input type="hidden" name="id" value="<?php echo $diary->id; ?>" />
-                </form>
-<?php } ?>
-<?php
+            }
         } else {
             $_SESSION['flash']['error'] = "Le type de contenu demandé n'existe pas.";
             header('Location: /?page=account');

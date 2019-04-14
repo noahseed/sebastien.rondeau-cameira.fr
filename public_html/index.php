@@ -3,13 +3,13 @@
     session_start();
 
     // Gestion des langues
-    require 'includes/inc_gestion_lang.php';
+    require './includes/inc_gestion_lang.php';
 
     // On charge les dépendances
-    require 'App/Loader.php';
+    require './App/Loader.php';
 
     // Gestion du cookie "remember"
-    require 'includes/inc_gestion_cookie.php';
+    require './includes/inc_gestion_cookie.php';
 
 
     if (!empty($_GET['page'])) {
@@ -43,12 +43,12 @@
     }
 
     // L'en-tête
-    require 'includes/inc_head.php';
+    require './includes/inc_head.php';
     // Le Header
-    require 'includes/inc_header.php';
+    require './includes/inc_header.php';
     // Le Menu
-    require 'includes/inc_block_menu.php';
+    require './includes/inc_block_menu.php';
     // Les pages du site
-    require 'includes/inc_page_'.$slug.'.php';
+    require './includes/inc_page_'.$slug.'.php';
     // Le Footer
-    require 'includes/inc_footer.php';
+    require './includes/inc_footer.php';

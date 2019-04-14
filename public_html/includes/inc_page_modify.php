@@ -1,4 +1,3 @@
-<?php require('functions.php'); ?>
 <?php // Logged Only
     if(!isset($_SESSION['auth'])) {
         $_SESSION['flash']['error'] = "Vous n'êtes pas connecté.";
@@ -7,7 +6,7 @@
     }
 ?>
 <?php // Si l'utilisateur n'est PAS un admin
-    if($_SESSION['auth']->is_admin == FALSE) {
+    if($_SESSION['auth']['user_is_admin'] == FALSE) {
         $_SESSION['flash']['error'] = "Vous n'êtes pas administrateur.";
         header('Location: /?page=login');
         exit();
@@ -15,37 +14,58 @@
 ?>
 <?php // Traitement du formulaire
     if(!empty($_POST['id'])) {
-        if(empty($_POST['title']) || empty($_POST['text'])) {
+        if(empty($_POST['title']) || empty($_POST['content'])) {
             // Si les deux informations n'ont PAS été entrées
             $_SESSION['flash']['error'] = "Vous devez remplir tous champs.";
         } else {
             // Si les deux informations ont été entrées
             $id        = $_POST['id'];
             $new_title = $_POST['title'];
-            $new_text  = $_POST['text'];
+            $new_content  = $_POST['content'];
 
             if($_GET['type'] == 'blog') {
-                $pdo->query("UPDATE blog SET title = '$new_title', text = '$new_text' WHERE id = $id");
+                $blogs = new Blogs();
+                $blog = new Blog();
 
+                $blog->article_id = $id;
+                $blog->article_title = $new_title;
+                $blog->article_content = $new_content;
+
+                $blogs->edit($blog);
                 $_SESSION['flash']['success'] = "Le billet a bien été modifié.";
+
                 header('Location: /?page=account');
                 exit();
-
             } elseif($_GET['type'] == 'tuto') {
-                $pdo->query("UPDATE tutos SET title = '$new_title', text = '$new_text' WHERE id = $id");
+                $tutos = new Tutos();
+                $tuto = new Tuto();
 
+                $tuto->tuto_id = $id;
+                $tuto->tuto_title = $new_title;
+                $tuto->tuto_content = $new_content;
+
+                $tutos->edit($tuto);
                 $_SESSION['flash']['success'] = "Le tutoriel a bien été modifié.";
+
                 header('Location: /?page=account');
                 exit();
 
             } elseif($_GET['type'] == 'music') {
-                $pdo->query("UPDATE music SET title = '$new_title', text = '$new_text' WHERE id = $id");
+                $musics = new Musics();
+                $music = new Music();
 
+                $music->music_id = $id;
+                $music->music_title = $new_title;
+                $music->music_content = $new_content;
+
+                $musics->edit($music);
                 $_SESSION['flash']['success'] = "La musique a bien été modifiée.";
+
                 header('Location: /?page=account');
                 exit();
+
             } elseif($_GET['type'] == 'diary') {
-                $pdo->query("UPDATE diary SET title = '$new_title', text = '$new_text' WHERE id = $id");
+                $pdo->query("UPDATE diary SET title = '$new_title', content = '$new_content' WHERE id = $id");
 
                 $_SESSION['flash']['success'] = "La page a bien été modifiée.";
                 header('Location: /?page=account');
@@ -78,43 +98,41 @@
     } else {
         if($_GET['type'] == 'blog') {
             if(!isset($_GET['id'])) { // Si l'id du blog n'a PAS été précisé
-
-                $select = $pdo->query("SELECT id, title FROM blog");
-                $pages  = $select->fetchAll();
-            
+                $blogs = new Blogs();
+                $pages = $blogs->findAll();
 ?>
                 <h1>Sélectionnez le billet à modifier</h1>
                 <ul>
 <?php foreach($pages as $page) { ?>
-                    <li><a href="/?page=modify&type=blog&id=<?php echo $page->id; ?>"><?php echo $page->title; ?></a></li>
+                    <li><a href="/?page=modify&type=blog&id=<?php echo $page['article_id']; ?>"><?php echo $page['article_title']; ?></a></li>
 <?php } ?>
                 </ul>
 <?php
             } else { // Si l'id du blog a été précisé
                 $id = $_GET['id'];
-                $req = $pdo->query("SELECT * FROM blog WHERE id = $id");
-                $billet = $req->fetch();
+                $blogs = new Blogs();
+                $billet = $blogs->find($id);
 ?>
                 <form method="POST">
                     <table>
                         <tr>
                             <th>ID</th>
-                            <td><?php echo $billet->id; ?></td>
+                            <td><?php echo $billet['article_id']; ?></td>
                         </tr>
                         <tr>
                             <th><label for="title">Titre du billet</label></th>
-                            <td><input type="text" name="title" id="title" value="<?php echo $billet->title; ?>" /></td>
+                            <td><input type="text" name="title" id="title" value="<?php echo $billet['article_title']; ?>"></td>
                         </tr>
                         <tr>
-                            <th><label for="text">Texte</label></th>
-                            <td><textarea name="text" id="editor"><?php echo $billet->text; ?></textarea></td>
+                            <th><label for="content">Texte</label></th>
+                            <td><textarea name="content" id="editor"><?php echo $billet['article_content']; ?></textarea></td>
                         </tr>
                         <tr>
                             <th></th>
                             <td><button type="submit">Modifier</button></td>
                         </tr>
                     </table>
-                    <input type="hidden" name="id" value="<?php echo $billet->id; ?>" />
+                    <input type="hidden" name="id" value="<?php echo $billet['article_id']; ?>">
                     <script>
                         ClassicEditor
                             .create( document.querySelector( '#editor' ) )
@@ -125,48 +143,49 @@
                 </form>
 <?php
             }
-?>
-<?php
         } elseif($_GET['type'] == 'tuto') {
             
             if(!isset($_GET['id'])) { // Si l'id du tuto n'a PAS été précisé
-
-                $select = $pdo->query("SELECT id, title FROM tutos");
-                $pages  = $select->fetchAll();
-            
+                $tutos = new Tutos();
+                $pages = $tutos->findAll();
 ?>
                 <h1>Sélectionnez le tutoriel à modifier</h1>
                 <ul>
-<?php foreach($pages as $page) { ?>
-                    <li><a href="/?page=modify&type=tuto&id=<?php echo $page->id; ?>"><?php echo $page->title; ?></a></li>
-<?php } ?>
+<?php
+                foreach($pages as $page) {
+?>
+                    <li><a href="/?page=modify&type=tuto&id=<?php echo $page['tuto_id']; ?>"><?php echo $page['tuto_title']; ?></a></li>
+<?php
+                }
+?>
                 </ul>
 <?php
             } else { // Si l'id du tuto a été précisé
                 $id = $_GET['id'];
-                $req = $pdo->query("SELECT * FROM tutos WHERE id = $id");
-                $tuto = $req->fetch();
+
+                $tutos = new Tutos();
+                $tuto = $tutos->find($id);
 ?>
                 <form method="POST">
                     <table>
                         <tr>
                             <th>ID</th>
-                            <td><?php echo $tuto->id; ?></td>
+                            <td><?php echo $tuto['tuto_id']; ?></td>
                         </tr>
                         <tr>
                             <th><label for="title">Titre du tutoriel</label></th>
-                            <td><input type="text" name="title" id="title" value="<?php echo $tuto->title; ?>" /></td>
+                            <td><input type="text" name="title" id="title" value="<?php echo $tuto['tuto_title']; ?>"></td>
                         </tr>
                         <tr>
-                            <th><label for="text">Texte</label></th>
-                            <td><textarea name="text" id="editor"><?php echo $tuto->text; ?></textarea></td>
+                            <th><label for="content">Texte</label></th>
+                            <td><textarea name="content" id="editor"><?php echo $tuto['tuto_content']; ?></textarea></td>
                         </tr>
                         <tr>
                             <th></th>
                             <td><button type="submit">Modifier</button></td>
                         </tr>
                     </table>
-                    <input type="hidden" name="id" value="<?php echo $tuto->id; ?>" />
+                    <input type="hidden" name="id" value="<?php echo $tuto['tuto_id']; ?>">
                     <script>
                         ClassicEditor
                             .create( document.querySelector( '#editor' ) )
@@ -175,48 +194,50 @@
                             } );
                     </script>
                 </form>
-<?php } ?>
 <?php
+            }
         } elseif($_GET['type'] == 'music') {
             
             if(!isset($_GET['id'])) { // Si l'id de la musique n'a PAS été précisé
 
-                $select = $pdo->query("SELECT id, title FROM music");
-                $pages  = $select->fetchAll();
-            
+                $musics = new Musics();
+                $pages = $musics->findAll();
 ?>
                 <h1>Sélectionnez la musique à modifier</h1>
                 <ul>
-<?php foreach($pages as $page) { ?>
-                    <li><a href="/?page=modify&type=music&id=<?php echo $page->id; ?>"><?php echo $page->title; ?></a></li>
-<?php } ?>
+<?php
+                foreach($pages as $page) { ?>
+                    <li><a href="/?page=modify&type=music&id=<?php echo $page['music_id']; ?>"><?php echo $page['music_title']; ?></a></li>
+<?php
+                }
+?>
                 </ul>
 <?php
             } else { // Si l'id de la musique a été précisé
                 $id = $_GET['id'];
-                $req = $pdo->query("SELECT * FROM music WHERE id = $id");
-                $music = $req->fetch();
+                $musics = new Musics();
+                $music = $musics->find($id);
 ?>
                 <form method="POST">
                     <table>
                         <tr>
                             <th>ID</th>
-                            <td><?php echo $music->id; ?></td>
+                            <td><?php echo $music['music_id']; ?></td>
                         </tr>
                         <tr>
                             <th><label for="title">Titre de la musique</label></th>
-                            <td><input type="text" name="title" id="title" value="<?php echo $music->title; ?>" /></td>
+                            <td><input type="text" name="title" id="title" value="<?php echo $music['music_title']; ?>"></td>
                         </tr>
                         <tr>
-                            <th><label for="text">Texte</label></th>
-                            <td><textarea name="text" id="editor"><?php echo $music->text; ?></textarea></td>
+                            <th><label for="content">Texte</label></th>
+                            <td><textarea name="content" id="editor"><?php echo $music['music_content']; ?></textarea></td>
                         </tr>
                         <tr>
                             <th></th>
                             <td><button type="submit">Modifier</button></td>
                         </tr>
                     </table>
-                    <input type="hidden" name="id" value="<?php echo $music->id; ?>" />
+                    <input type="hidden" name="id" value="<?php echo $music['music_id']; ?>">
                 </form>
                 <script>
                     ClassicEditor
@@ -258,8 +279,8 @@
                             <td><input type="text" name="title" id="title" value="<?php echo $diary->title; ?>" /></td>
                         </tr>
                         <tr>
-                            <th><label for="text">Texte</label></th>
-                            <td><textarea name="text" id="editor"><?php echo $diary->text; ?></textarea></td>
+                            <th><label for="content">Texte</label></th>
+                            <td><textarea name="content" id="editor"><?php echo $diary->content; ?></textarea></td>
                         </tr>
                         <tr>
                             <th></th>

@@ -1,4 +1,3 @@
-<?php require('functions.php'); ?>
 <?php
     // Logged Only
     if(!isset($_SESSION['auth'])) {
@@ -7,8 +6,9 @@
         exit();
     }
 ?>
-<?php // Si l'utilisateur n'est PAS un admin
-    if($_SESSION['auth']->is_admin == FALSE) {
+<?php
+    // Si l'utilisateur n'est PAS un admin
+    if($_SESSION['auth']['user_is_admin'] == FALSE) {
         $_SESSION['flash']['error'] = "Vous n'êtes pas administrateur.";
         header('Location: /?page=login');
         exit();
@@ -22,17 +22,22 @@
             $title = 'Ajouter un billet dans le Blog';
 
             if(!empty($_POST['title'])) { // Si on reçoit du contenu
-                if(empty($_POST['text'])) {
+                if(empty($_POST['content'])) {
                     // Si les deux informations n'ont PAS été entrées
                     $_SESSION['flash']['error'] = "Vous devez entrer le texte du billet.";
                 } else {
                     // Si les deux informations ont été entrées
                     $title  = $_POST['title'];
-                    $text_blog = $_POST['text'];
+                    $blog_content = $_POST['content'];
 
-                    $pdo->prepare("INSERT blog SET title = ?, text = ?")->execute([$title, $text_blog]);
+                    $blogs = new Blogs();
+                    $blog = new Blog();
+                    $blog->article_title = $title;
+                    $blog->article_content = $blog_content;
 
+                    $blogs->add($blog);
                     $_SESSION['flash']['success'] = "Le billet a été ajouté au blog.";
+
                     header('Location: /?page=account');
                     exit();
                 }
@@ -42,17 +47,22 @@
             $title = 'Ajouter un Tutoriel';
 
             if(!empty($_POST['title'])) { // Si on reçoit du contenu
-                if(empty($_POST['text'])) {
+                if(empty($_POST['content'])) {
                     // Si les deux informations n'ont PAS été entrées
                     $_SESSION['flash']['error'] = "Vous devez entrer le texte du tutoriel.";
                 } else {
                     // Si les deux informations ont été entrées
                     $title  = $_POST['title'];
-                    $text_tuto = $_POST['text'];
+                    $text_tuto = $_POST['content'];
 
-                    $pdo->prepare("INSERT tutos SET title = ?, text = ?")->execute([$title, $text_tuto]);
+                    $tutos = new Tutos();
+                    $tuto = new Tuto();
+                    $tuto->tuto_title = $title;
+                    $tuto->tuto_content = $text_tuto;
 
+                    $tutos->add($tuto);
                     $_SESSION['flash']['success'] = "Le tutoriel a été ajouté.";
+
                     header('Location: /?page=account');
                     exit();
                 }
@@ -69,9 +79,14 @@
                     // Si les deux informations ont été entrées
                     $title  = $_POST['title'];
                     $serial = $_POST['serial'];
-                    $text = $serial;
+                    $content = $serial;
 
-                    $pdo->prepare("INSERT music SET title = ?, text = ?")->execute([$title, $text]);
+                    $musics = new Musics();
+                    $music = new Music();
+                    $music->music_title = $title;
+                    $music->music_content = $content;
+
+                    $musics->add($music);
 
                     $_SESSION['flash']['success'] = "La musique a été ajoutée.";
                     header('Location: /?page=account');
@@ -83,15 +98,15 @@
             $title = 'Ajouter une page dans le journal';
 
             if(!empty($_POST['title'])) { // Si on reçoit du contenu
-                if(empty($_POST['text'])) {
+                if(empty($_POST['content'])) {
                     // Si les deux informations n'ont PAS été entrées
                     $_SESSION['flash']['error'] = "Vous devez entrer le texte de la page.";
                 } else {
                     // Si les deux informations ont été entrées
                     $title  = $_POST['title'];
-                    $text_diary = $_POST['text'];
+                    $text_diary = $_POST['content'];
 
-                    $pdo->prepare("INSERT diary SET title = ?, text = ?")->execute([$title, $text_diary]);
+                    $pdo->prepare("INSERT diary SET title = ?, content = ?")->execute([$title, $text_diary]);
 
                     $_SESSION['flash']['success'] = "La page a été ajoutée.";
                     header('Location: /?page=account');
@@ -126,11 +141,11 @@
                     <table>
                         <tr>
                             <th><label for="title">Titre du billet</label></th>
-                            <td><input type="text" name="title" id="title" required /></td>
+                            <td><input type="text" name="title" id="title" required></td>
                         </tr>
                         <tr>
-                            <th><label for="text">Texte</label></th>
-                            <td><textarea name="text" id="editor"></textarea></td>
+                            <th><label for="content">Texte</label></th>
+                            <td><textarea name="content" id="editor"></textarea></td>
                         </tr>
                         <tr>
                             <th></th>
@@ -152,11 +167,11 @@
                     <table>
                         <tr>
                             <th><label for="title">Nom du tutoriel</label></th>
-                            <td><input type="text" name="title" id="title" required /></td>
+                            <td><input type="text" name="title" id="title" required></td>
                         </tr>
                         <tr>
-                            <th><label for="text">Texte</label></th>
-                            <td><textarea name="text" id="editor"></textarea></td>
+                            <th><label for="content">Texte</label></th>
+                            <td><textarea name="content" id="editor"></textarea></td>
                         </tr>
                         <tr>
                             <th></th>
@@ -178,11 +193,11 @@
                     <table>
                         <tr>
                             <th><label for="title">Artiste - Titre</label></th>
-                            <td><input type="text" name="title" id="title" required /></td>
+                            <td><input type="text" name="title" id="title" required></td>
                         </tr>
                         <tr>
                             <th><label for="serial">Slug YouTube</label></th>
-                            <td><input type="text" name="serial" id="serial" required /></td>
+                            <td><input type="text" name="serial" id="serial" required></td>
                         </tr>
                         <tr>
                             <th></th>
@@ -197,11 +212,11 @@
                     <table>
                         <tr>
                             <th><label for="title">Nom de la page</label></th>
-                            <td><input type="text" name="title" id="title" required /></td>
+                            <td><input type="text" name="title" id="title" required></td>
                         </tr>
                         <tr>
-                            <th><label for="text">Texte</label></th>
-                            <td><textarea name="text" id="editor"></textarea></td>
+                            <th><label for="content">Texte</label></th>
+                            <td><textarea name="content" id="editor"></textarea></td>
                         </tr>
                         <tr>
                             <th></th>

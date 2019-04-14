@@ -170,6 +170,26 @@ class Users extends Db
         return $result;
     }
 
+    public function edit(string $user_password, int $user_id)
+    {
+        $sql = "UPDATE
+        `users`
+        SET
+        `user_password` = :user_password
+        WHERE
+        `user_id` = :user_id";
+
+        $stmt = $this->pdo->prepare($sql);
+
+        $stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+
+        $stmt->bindValue(':user_password', $user_password);
+
+        $stmt->execute();
+
+        $stmt->closeCursor();
+    }
+
     public function resetToken(string $reset_token, int $user_id) : int
     {
         $sql = "UPDATE

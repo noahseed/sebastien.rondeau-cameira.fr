@@ -105,8 +105,15 @@
                     // Si les deux informations ont été entrées
                     $title  = $_POST['title'];
                     $text_diary = $_POST['content'];
+                    $slug = str_random(6);
 
-                    $pdo->prepare("INSERT diary SET title = ?, content = ?")->execute([$title, $text_diary]);
+                    $diaries = new Diaries();
+                    $diary = new Diary();
+                    $diary->diary_slug = $slug;
+                    $diary->diary_title = $title;
+                    $diary->diary_content = $text_diary;
+
+                    $diaries->add($diary);
 
                     $_SESSION['flash']['success'] = "La page a été ajoutée.";
                     header('Location: /?page=account');

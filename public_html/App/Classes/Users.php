@@ -2,6 +2,71 @@
 
 class Users extends Db
 {
+
+    public function find(int $user_id)
+    {
+        $sql = "SELECT
+        `user_id`,
+        `user_username`,
+        `user_email`,
+        `user_password`,
+        `user_confirmation_token`,
+        `user_confirmed_at`,
+        `user_reset_token`,
+        `user_reset_at`,
+        `user_remember_token`,
+        `user_is_admin`,
+        `user_is_vip`
+        FROM `users`
+        WHERE `user_id` = :user_id";
+
+        $stmt = $this->pdo->prepare($sql);
+
+        $stmt->bindValue(
+            ':user_id',
+            $user_id,
+            PDO::PARAM_INT
+        );
+
+        if($stmt->execute())
+        {
+            $result = $stmt->fetch();
+        }
+
+        $stmt->closeCursor();
+
+        return $result;
+    }
+
+    public function findAll()
+    {
+        $sql = "SELECT
+        `user_id`,
+        `user_username`,
+        `user_email`,
+        `user_password`,
+        `user_confirmation_token`,
+        `user_confirmed_at`,
+        `user_reset_token`,
+        `user_reset_at`,
+        `user_remember_token`,
+        `user_is_admin`,
+        `user_is_vip`
+        FROM `users`
+        ORDER BY `user_username`";
+
+        $stmt = $this->pdo->prepare($sql);
+
+        if($stmt->execute())
+        {
+            $result = $stmt->fetchAll();
+        }
+
+        $stmt->closeCursor();
+
+        return $result;
+    }
+
     public function findRegistred(string $username)
     {
         $sql = "SELECT
@@ -38,7 +103,7 @@ class Users extends Db
         return $result;
     }
 
-    public function find(int $user_id)
+    public function findToken(int $user_id, string $user_reset_token)
     {
         $sql = "SELECT
         `user_id`,
@@ -53,15 +118,17 @@ class Users extends Db
         `user_is_admin`,
         `user_is_vip`
         FROM `users`
-        WHERE `user_id` = :user_id";
+        WHERE `user_id` = :user_id
+        AND user_reset_token
+        IS NOT NULL AND
+        user_reset_token = :user_reset_token
+        AND user_reset_at > DATE_SUB(NOW(),
+        INTERVAL 60 MINUTE)";
 
         $stmt = $this->pdo->prepare($sql);
 
-        $stmt->bindValue(
-            ':user_id',
-            $user_id,
-            PDO::PARAM_INT
-        );
+        $stmt->bindValue(':user_id', $user_id);
+        $stmt->bindValue(':user_reset_token', $user_reset_token);
 
         if($stmt->execute())
         {
@@ -109,34 +176,6 @@ class Users extends Db
         return $result;
     }
 
-    public function findAll()
-    {
-        $sql = "SELECT
-        `user_id`,
-        `user_username`,
-        `user_email`,
-        `user_password`,
-        `user_confirmation_token`,
-        `user_confirmed_at`,
-        `user_reset_token`,
-        `user_reset_at`,
-        `user_remember_token`,
-        `user_is_admin`,
-        `user_is_vip`
-        FROM `users`
-        ORDER BY `user_username`";
-
-        $stmt = $this->pdo->prepare($sql);
-
-        if($stmt->execute())
-        {
-            $result = $stmt->fetchAll();
-        }
-
-        $stmt->closeCursor();
-
-        return $result;
-    }
 
     public function add(User $user)
     {
@@ -182,8 +221,28 @@ class Users extends Db
         $stmt = $this->pdo->prepare($sql);
 
         $stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);
-
         $stmt->bindValue(':user_password', $user_password);
+
+        $stmt->execute();
+
+        $stmt->closeCursor();
+    }
+
+    public function editPassword(string $new_password, int $user_id)
+    {
+        $sql = "UPDATE
+        `users`
+        SET
+        `user_password` = :new_password,
+        `user_reset_at` = NULL,
+        `user_reset_token` = NULL
+        WHERE
+        `user_id` = :user_id";
+
+        $stmt = $this->pdo->prepare($sql);
+
+        $stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+        $stmt->bindValue(':new_password', $new_password);
 
         $stmt->execute();
 

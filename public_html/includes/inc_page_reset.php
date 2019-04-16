@@ -1,13 +1,15 @@
 <?php
 	if(isset($_GET['id']) && isset($_GET['token'])) {
-		$req = $pdo->prepare("SELECT * FROM users WHERE id = ? AND reset_token IS NOT NULL AND reset_token = ? AND reset_at > DATE_SUB(NOW(), INTERVAL 60 MINUTE)");
-		$req->execute([$_GET['id'], $_GET['token']]);
-		$user = $req->fetch();
+		$users = new Users();
+		$user = $users->findToken($_GET['id'], $_GET['token']);
+
 		if($user) {
 			if(!empty($_POST)) {
 				if(!empty($_POST['password']) && $_POST['password'] == $_POST['password_confirm']) {
+
 					$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-					$pdo->prepare('UPDATE users SET password = ?, reset_at = NULL, reset_token = NULL')->execute([$password]);
+
+					$users->editPassword($password, $user['user_id']);
 
 					$_SESSION['flash']['success'] = "Votre mot de passe a bien été modifié.";
 					$_SESSION['auth'] = $user;
@@ -43,11 +45,11 @@
                     <table>
                         <tr>
                             <th><label>Mot de passe</label></th>
-                            <td><input type="password" name="password" /></td> <!-- required -->
+                            <td><input type="password" name="password"></td>
                         </tr>
                         <tr>
                             <th><label>Confirmation du mot de passe</label></th>
-                            <td><input type="password" name="password_confirm" /></td>
+                            <td><input type="password" name="password_confirm"></td>
                         </tr>
                         <tr>
                             <th></th>

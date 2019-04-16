@@ -107,7 +107,8 @@ class Musics extends Db
         `music_date`,
         `music_title`,
         `music_content`
-        FROM `music`";
+        FROM `music`
+        ORDER BY `music_title`";
 
         $stmt = $this->pdo->prepare($sql);
 

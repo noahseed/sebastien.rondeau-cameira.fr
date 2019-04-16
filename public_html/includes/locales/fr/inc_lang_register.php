@@ -74,7 +74,7 @@
             $users = new Users();
 
             $user1 = $users->findUser($_POST['email']);
-            $user_id = $user1->user_id;
+            $user_id = $user1['user_id'];
 
             // Puis on envoie le mail de confirmation
             $subject  = "Merci de confirmer votre inscription";

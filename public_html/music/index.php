@@ -28,7 +28,7 @@
 
     $id = $page['music_id'];
     $title = $page['music_title'];
-    $text = $page['music_content'];
+    $text = $page['music_slug'];
 
 
     // L'en-tête

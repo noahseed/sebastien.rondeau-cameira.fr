@@ -7,7 +7,7 @@
 
 		public $music_title;
 
-        public $music_content;
+        public $music_slug;
         
 		public function __construct()
 		{

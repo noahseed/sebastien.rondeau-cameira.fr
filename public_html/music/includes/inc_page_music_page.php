@@ -18,7 +18,7 @@
 <?php } ?>
             <div class="title"><?php echo $title; ?></div>
             <div class="article">
-<?php echo $text; ?>
+                <iframe class="youtube" src="https://www.youtube.com/embed/<?php echo $text; ?>?rel=0" frameborder="0" allowfullscreen></iframe>
             </div>
 <?php
     $suiv = $page_id + 1;

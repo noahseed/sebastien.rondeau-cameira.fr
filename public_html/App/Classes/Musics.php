@@ -9,19 +9,19 @@ class Musics extends Db
         (
             `music_date`,
             `music_title`,
-            `music_content`
+            `music_slug`
         )
         VALUES
         (
             NOW(),
             :music_title,
-            :music_content
+            :music_slug
         )";
 
         $stmt = $this->pdo->prepare($sql);
 
         $stmt->bindValue(':music_title', $music->music_title);
-        $stmt->bindValue(':music_content', $music->music_content);
+        $stmt->bindValue(':music_slug', $music->music_slug);
 
         $result = 0;
 
@@ -57,7 +57,7 @@ class Musics extends Db
         `music`
         SET
         `music_title` = :music_title,
-        `music_content` = :music_content
+        `music_slug` = :music_slug
         WHERE
         `music_id` = :music_id";
 
@@ -65,7 +65,7 @@ class Musics extends Db
 
         $stmt->bindValue(':music_id', $music->music_id, PDO::PARAM_INT);
         $stmt->bindValue(':music_title', $music->music_title);
-        $stmt->bindValue(':music_content', $music->music_content);
+        $stmt->bindValue(':music_slug', $music->music_slug);
 
         $stmt->execute();
 
@@ -78,7 +78,7 @@ class Musics extends Db
         `music_id`,
         `music_date`,
         `music_title`,
-        `music_content`
+        `music_slug`
         FROM `music`
         WHERE `music_id` = :music_id";
 
@@ -106,7 +106,7 @@ class Musics extends Db
         `music_id`,
         `music_date`,
         `music_title`,
-        `music_content`
+        `music_slug`
         FROM `music`
         ORDER BY `music_title`";
 

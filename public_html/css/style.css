@@ -470,7 +470,10 @@ th {
     text-align: justify;
 }
 .section {
-    position: relative;
+    /* position: relative; */
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -499,7 +502,8 @@ th {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    /*width: 100%;
+    height: 100vh;*/
     z-index: -1;
 }
 .video-container iframe,
@@ -509,6 +513,7 @@ th {
     top: 0;
     left: 0;
     width: 100%;
+    height: 100vh;
 }
 #hamburger, #hamburger-content {
 	display: inline;

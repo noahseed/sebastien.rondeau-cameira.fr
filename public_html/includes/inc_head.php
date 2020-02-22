@@ -29,7 +29,7 @@
     <meta property="og:image" content="/images/aum_noir.png">
     <link rel="alternate" hreflang="x-default" href="https://sebastien.rondeau-cameira.fr/">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.min.css">
     <link rel="icon" type="image/png" href="/favicon.png">
 <?php
 

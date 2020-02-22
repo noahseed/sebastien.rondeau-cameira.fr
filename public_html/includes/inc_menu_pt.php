@@ -13,7 +13,6 @@
                             <li><a href="/?page=about">Quem sou eu ?</a></li>
                             <li><a href="/?page=cv">Meu Curriculum</a></li>
                             <li><a href="/?page=contact">Contacte-me</a></li>
-                            <li><a href="/?page=donations">Apoiar-me</a></li>
                             <li><a href="/?page=links">Endereços</a></li>
                         </ul>
                     </nav>

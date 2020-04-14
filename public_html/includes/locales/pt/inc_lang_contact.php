@@ -96,7 +96,11 @@
         // Envoi du SMS
         $ch = curl_init();
 
-        curl_setopt($ch, CURLOPT_URL, "https://smsapi.free-mobile.fr/sendmsg?user=32673718&pass=zcqLUuam8IshvB&msg=$message");
+        curl_setopt($ch, CURLOPT_URL, "https://smsapi.free-mobile.fr/sendmsg");
+
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS,
+            "user=32673718&pass=zcqLUuam8IshvB&msg=$message");
 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 

@@ -94,10 +94,10 @@
             $headers .= "X-MSMail-Priority: High \r\n";
 
         // SMS
-        $smsMessage = "Prénom : ".$firstname." \r\n";
-        $smsMessage .= "Nom : ".$lastname." \r\n";
-        $smsMessage .= "Sujet : ".$subject." \r\n";
-        $smsMessage .= "Message :".$message." \r\n";
+        $smsMessage = "Prénom : ".$firstname;
+        $smsMessage .= "Nom : ".$lastname;
+        $smsMessage .= "Sujet : ".$subject;
+        $smsMessage .= "Message :".$message;
             
 
         // Envoi du SMS

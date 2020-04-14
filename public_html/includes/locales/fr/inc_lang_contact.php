@@ -115,7 +115,7 @@
 
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS,
-            "user=32673718&pass=zcqLUuam8IshvB&msg=$message");
+            "user=32673718&pass=zcqLUuam8IshvB&msg=Prénom:$firstname\r\nNom:$lastname\r\nSujet:$subject\r\nMessage:$message");
         
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 

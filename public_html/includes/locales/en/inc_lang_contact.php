@@ -94,9 +94,9 @@
             $headers .= "X-MSMail-Priority: High \r\n";
 
         // SMS
-        $smsMessage = "Prénom : ".$firstname;
-        $smsMessage .= "Nom : ".$lastname;
-        $smsMessage .= "Sujet : ".$subject;
+        $smsMessage = "Prénom : ".$firstname." ";
+        $smsMessage .= "Nom : ".$lastname." ";
+        $smsMessage .= "Sujet : ".$subject." ";
         $smsMessage .= "Message :".$message;
             
 

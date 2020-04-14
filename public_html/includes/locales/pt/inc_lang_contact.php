@@ -93,6 +93,17 @@
             $headers .= "X-Priority: 1  \r\n";
             $headers .= "X-MSMail-Priority: High \r\n";
 
+        // Envoi du SMS
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, "https://smsapi.free-mobile.fr/sendmsg?user=32673718&pass=zcqLUuam8IshvB&msg=$message");
+
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+        $output = curl_exec($ch);
+
+        curl_close($ch);
+
         mail($to, "[Site Web] $subject", $htmlmess, $headers);
 ?>
         <article>

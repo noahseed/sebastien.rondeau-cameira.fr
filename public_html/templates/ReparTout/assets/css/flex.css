@@ -1,0 +1,130 @@
+:root {
+    --body: #333333;
+    --primary: #111111;
+    --secondary: #9d0d0f;
+    --light: white;
+    --highlight: #EEEE00;
+    --hover: #00EE00;
+    --grey: #646464;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--body);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    min-height: 100%;
+    color: var(--light);
+}
+
+h3 {
+    padding-top: .38em;
+}
+
+h2, h3 {
+    border-bottom: 2px solid var(--highlight);
+}
+
+h2, h3, a:link, a:visited {
+    text-decoration: none;
+    color: var(--highlight);
+    margin-bottom: 1em;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+a:hover, a:active {
+    
+}
+
+header {
+    background: #111111 url('../img/slide.jpg');
+    padding: 1em;
+    border-bottom: 2px solid var(--light);
+}
+
+header img {
+    width: 300px;
+}
+
+input[type="submit"] {
+    height: 32px;
+    width: 90%;
+}
+
+input[type="text"] {
+    height: 32px;
+    width: 100%;
+}
+
+main {
+    display: flex;
+    min-height: 84vh;
+}
+
+main > section {
+    flex: 5;
+    background-color: var(--primary);
+    padding: 1em;
+    border-left: 2px solid var(--light);
+    border-right: 2px solid var(--light);
+}
+
+main > nav, main > aside {
+    flex: 1;
+    background-color: var(--secondary);
+    padding: 1em;
+}
+
+ul {
+    padding-left: .2em;
+    list-style: none;
+}
+
+li a {
+    transition: all ease 500ms;
+    border: 2px solid var(--light);
+    border-radius: 50px;
+    display: block;
+    padding: 10px;
+}
+
+li a:hover {
+    color: var(--secondary);
+    background-color: var(--highlight);
+    padding-left: 20px;
+}
+
+footer {
+    color: var(--highlight);
+    background: url('../img/banner.jpg');
+    text-align: center;
+    font-weight: bold;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 5vh;
+    padding: 1em;
+    background-position-y: -90px;
+    border-top: 2px solid var(--light);
+}
+
+table {
+    width: 100%;
+    background: var(--body);
+    color: var(--light);
+    border-color: var(--secondary);
+}
+
+th {
+    background: var(--grey);
+    color: var(--light);
+}
+
+.center {
+    text-align: center;
+}

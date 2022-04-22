@@ -1,0 +1,29 @@
+:root {
+    --body: #333333;
+    --primary: #111111;
+    --secondary: #9a88ff;
+    --light: white;
+    --highlight: #EEEE00;
+    --hover: #00EE00;
+    --grey: #646464;
+}
+* {
+    box-sizing: border-box;
+}
+header {
+    background: #111111 url('../img/slide.jpg');
+    padding: 1em;
+    border-bottom: 2px solid var(--light);
+}
+header img {
+    width: 300px;
+}
+main {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+}
+@media screen and (max-width: 800px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+}

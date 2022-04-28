@@ -1,0 +1,14 @@
+nano /etc/hosts
+nano /etc/hostname
+
+sudo timedatectl set-timezone Europe/Paris
+sudo dpkg-reconfigure locales
+
+apt update
+apt upgrade
+
+sh <(curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/install.sh)
+
+---------------------------------------
+
+sudo chown cyberpanel:cyberpanel -R /usr/local/CyberCP/lib/python3.8/site-packages/tldextract/.suffix_cache

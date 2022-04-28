@@ -1,0 +1,49 @@
+ssh ubuntu@rondeau-cameira.fr
+f9HcvSCUkfUv
+-------------------------------------------------------------
+echo "rondeau-cameira.fr" > /etc/hostname
+
+sudo nano /etc/hosts
+sudo nano /etc/hostname
+-> rondeau-cameira.fr
+
+sudo timedatectl set-timezone Europe/Paris
+sudo dpkg-reconfigure locales
+
+sudo apt update
+sudo apt upgrade
+
+sudo apt install -y apache2 apache2-utils
+
+sudo chown www-data:www-data /var/www/html/ -R
+
+sudo apt install mariadb-server mariadb-client
+sudo mysql_secure_installation
+
+sudo apt install php libapache2-mod-php php-mysql php-common php-cli php-common php-json php-opcache php-readline php-fpm
+
+sudo a2enmod proxy_fcgi setenvif
+sudo a2enconf php-fpm
+
+sudo a2enmod ssl
+sudo a2enmod headers
+
+sudo systemctl restart apache2
+
+sudo snap install core
+sudo snap refresh core
+sudo snap install --classic certbot
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
+-------------------------------------------------------------
+sudo certbot --apache
+
+sudo apt install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python unzip
+wget http://prdownloads.sourceforge.net/webadmin/webmin_1.981_all.deb
+sudo dpkg --install webmin_1.981_all.deb
+-------------------------------------------------------------
+sudo iptables -I INPUT -p tcp --dport 22 -j ACCEPT
+sudo iptables -I INPUT -p tcp --dport 80 -j ACCEPT
+sudo iptables -I INPUT -p tcp --dport 443 -j ACCEPT
+sudo iptables -I INPUT -p tcp --dport 10000 -j ACCEPT
+
+sudo apt install iptables-persistent

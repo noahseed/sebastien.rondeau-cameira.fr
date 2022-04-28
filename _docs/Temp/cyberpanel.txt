@@ -1,0 +1,35 @@
+rondeau-cameira.fr
+###################################################################
+                CyberPanel Successfully Installed
+
+                Current Disk usage : 6/39GB (18%)
+
+                Current RAM  usage : 348/1939MB (17.95%)
+
+                Installation time  : 0 hrs 12 min 0 sec
+
+                Visit: https://92.222.25.134:8090
+                Panel username: admin
+                Panel password: Fj6iNDazh0QGCurA
+                Visit: https://92.222.25.134:7080
+                WebAdmin console username: admin
+                WebAdmin console password: y97ttHIbgjhfV9Zj
+
+                Visit: https://92.222.25.134:8090/rainloop/?admin
+                Rainloop Admin username: admin
+                Rainloop Admin password: G5QAhqY4aTyk00
+
+             Run cyberpanel help to get FAQ info
+             Run cyberpanel upgrade to upgrade it to latest version.
+             Run cyberpanel utility to access some handy tools .
+
+              Website : https://www.cyberpanel.net
+              Forums  : https://forums.cyberpanel.net
+              Wikipage: https://docs.cyberpanel.net
+              Docs    : https://cyberpanel.net/docs/
+
+            Enjoy your accelerated Internet by
+                CyberPanel & OpenLiteSpeed
+###################################################################
+sebastien
+9d6vCpyfqeLP0t+h

@@ -1,0 +1,22 @@
+sudo apt-get install php libapache2-mod-php php-gd php-common php-json php-json php-imagick php-imap php-xml php-opcache php-mbstring php-curl php-zip php-bz2 php-intl php-ldap
+
+sudo service apache2 restart
+
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === '906a84df04cea2aa72f40b5f787e49f22d4c2f19492ac310e8cba5b96ac8b64115ac402c8cd292b8a03482574915d1a8') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+
+sudo mv composer.phar /usr/local/bin/composer
+
+wget https://github.com/roundcube/roundcubemail/releases/download/1.5.0/roundcubemail-1.5.0-complete.tar.gz
+tar -zxvf roundcubemail-1.5.0-complete.tar.gz
+
+sudo php composer.phar install --no-dev
+
+
+---------------------------------------------------------------------
+bdd
+roundcube
+rounduser
+XRRMMbpdeGsvz3JSAcrc

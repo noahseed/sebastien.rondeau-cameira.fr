@@ -1,11 +1,21 @@
-# Activation Réécriture d'url
-RewriteEngine on
+Options +FollowSymlinks
+Options -Indexes
+
+RewriteEngine On
+
+# Force la connection HTTPS
+RewriteCond %{HTTPS} !on
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Redirect www to non-www
+RewriteCond %{HTTP_HOST} ^www\.(.+) [NC]
+RewriteRule ^(.*) http://%1/$1 [R=301,NE,L]
 
 # Cache l'extention .php dans l'url
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^(.*)$ $1.php
 
-#Redirection sur erreur 404
-#ErrorDocument 403 /?page=403
-#ErrorDocument 404 /?page=404
+<IfModule mod_headers.c>
+	Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains"
+</IfModule>

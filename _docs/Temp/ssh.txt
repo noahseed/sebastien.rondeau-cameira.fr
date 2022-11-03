@@ -1,2 +1,0 @@
-ssh ubuntu@92.222.25.134
-rYUspquvc2jh

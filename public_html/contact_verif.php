@@ -14,7 +14,7 @@
 		"isSuccess" => false
 	);
 
-    $emailTo = "noahseed@hotmail.com";
+    $emailTo = "sebastien@rondeau-cameira.fr";
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $array['firstname'] = htmlspecialchars($_POST['firstname']);

@@ -1,0 +1,4 @@
+AuthUserFile /var/www/rondeau-cameira_iso/public_html/ISO/.htpasswd
+AuthName "Accès restreint - Veuillez vous authentifier"
+AuthType Basic
+Require valid-user

@@ -333,7 +333,7 @@
                 <span class="glyphicon glyphicon-chevron-up"></span>
             </a>
             <h5>
-                <a href="https://sebastien.rondeau-cameira.fr/" target="_blank">&copy; 2020 Sébastien RONDEAU-CAMEIRA</a>
+                <a href="https://sebastien.rondeau-cameira.fr/" target="_blank">&copy; 2017-<?php echo date('Y'); ?> Sébastien RONDEAU-CAMEIRA</a>
             </h5>
         </footer>
     </body>

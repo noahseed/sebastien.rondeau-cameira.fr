@@ -72,15 +72,29 @@ ul, ol {
 }
 /* ABOUT */
 #about {
-    padding-top: 100px;
-    background-color: #111;
+    background: url("../images/space-background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    object-fit: cover;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+#about > section {
+    height: 100%;
 }
 .profile-picture {
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    margin: 0 auto;
-    float: none;
+    display: block;
     filter: grayscale(100%);
     -webkit-filter: grayscale(100%);
+    margin: 100px auto;
 }
 #about .heading h1 {
     color: whitesmoke;

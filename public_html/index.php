@@ -43,6 +43,7 @@
             <div class="col-xs-8 col-md-4 profile-picture">
                 <img src="images/me.jpg" alt="Sébastien" class="img-circle">
             </div>
+            <br>
             <div class="heading">
                 <h1>Sébastien RONDEAU-CAMEIRA</h1>
                 <h3>Développeur Web</h3>

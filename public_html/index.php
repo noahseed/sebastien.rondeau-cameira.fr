@@ -8,12 +8,12 @@
         <meta name="Rating" content="General">
         <meta name="revisit-after" content="1 month">
         <meta name="author" content="Sébastien RONDEAU-CAMEIRA">
-        <link rel="icon" type="image/png" href="favicon.png">
         <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
         <script src="js/script.js"></script>
     </head>
     <body data-spy="scroll" data-target=".navbar" data-offset="60">

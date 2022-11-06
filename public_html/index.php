@@ -40,14 +40,15 @@
             </div>
         </nav>
         <section id="about" class="container-fluid">
-            <div class="col-xs-8 col-md-4 profile-picture">
-                <img src="images/me.jpg" alt="Sébastien" class="img-circle">
-            </div>
-            <br>
-            <div class="heading">
-                <h1>Sébastien RONDEAU-CAMEIRA</h1>
-                <h3>Développeur Web</h3>
-                <a href="docs/cv-sebastien-fr.pdf" class="button">Télécharger le CV</a>
+            <div class="row">
+                <div class="profile-picture">
+                    <img src="images/me.jpg" alt="Sébastien" class="img-circle">
+                </div>
+                <div class="heading">
+                    <h1>Sébastien RONDEAU-CAMEIRA</h1>
+                    <h3>Développeur Web</h3>
+                    <a href="docs/cv-sebastien-fr.pdf" class="button">Télécharger le CV</a>
+                </div>
             </div>
         </section>
         <section id="skills">

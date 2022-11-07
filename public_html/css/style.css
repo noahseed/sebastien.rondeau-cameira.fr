@@ -1,4 +1,12 @@
-/* GENERAL */
+:root {
+    --main-menu-color: rgb(143, 0, 226);
+    --main-link-color: #ff5733;
+    --main-color1: #111;
+    --main-color2: #eee;
+    --main-color3: #777;
+    --main-color4: rgb(143, 0, 226);
+    --main-color5: #ff5733;
+}
 * {
     box-sizing: border-box;
 }
@@ -7,7 +15,12 @@ body {
 }
 h1,h2,h3,h4,h5,h6 {
     font-weight: bold;
-    text-shadow: 2px 2px 2px gray;
+    color: var(--main-color2);
+    text-shadow: 2px 2px 2px var(--main-color3);
+}
+h4 {
+    color: var(--main-color1);
+    text-shadow: 2px 2px 2px var(--main-color3);
 }
 img {
     max-width: 100%;
@@ -29,24 +42,19 @@ ul, ol {
 .black-divider {
     width: 100px;
     height: 2px;
-    background-color: black;
+    background-color: var(--main-color1);
     margin: 0 auto;
-}
-.gray-divider {
-    width: 100px;
-    height: 2px;
-    background-color: gray;
-    margin: 0 auto;
+    box-shadow: 0 1px 6px var(--main-color3);
 }
 .white-divider {
     width: 100px;
     height: 2px;
-    background-color: #fff;
+    background-color: var(--main-color2);
     margin: 0 auto;
+    box-shadow: 0 1px 6px var(--main-color3);
 }
-/* MENU */
 .navbar {
-    background-color: #555;
+    background-color: var(--main-color3);
     font-size: 12px;
     letter-spacing: 4px;
     text-transform: uppercase;
@@ -61,16 +69,17 @@ ul, ol {
     text-align: center;
 }
 .navbar li a {
-    color: black !important;
+    color: var(--main-color2) !important;
+    text-shadow: 2px 2px 2px var(--main-color1);
 }
 .navbar-nav li a:hover, .navbar-nav li.active a {
-    color: whitesmoke !important;
-    background-color: #111 !important;
+    color: var(--main-color2) !important;
+    text-shadow: 2px 2px 2px var(--main-color3);
+    background-color: var(--main-color1) !important;
 }
 .icon-bar {
-    background-color: #fff !important;
+    background-color: var(--main-color2) !important;
 }
-/* ABOUT */
 #about {
     background: url("../images/space-background.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -87,20 +96,17 @@ ul, ol {
 .profile-picture {
     filter: grayscale(100%);
     -webkit-filter: grayscale(100%);
+
 }
 #about .heading h1 {
-    color: whitesmoke;
     text-transform: uppercase;
     margin-top: 30px;
-}
-#about .heading h3 {
-    color: #aaa;
 }
 .button {
     font-weight: bold;
     text-transform: uppercase;
-    color: whitesmoke;
-    border: 2px solid gray;
+    color: var(--main-color2);
+    border: 2px solid var(--main-color2);
     display: inline-block;
     margin-top: 20px;
     padding: 18px 50px;
@@ -109,42 +115,41 @@ ul, ol {
     background: transparent;
 }
 .button:hover {
-    background: gray;
-    color: black;
+    background: var(--main-color3);
+    color: var(--main-color1);
     text-decoration: none;
-    border: 2px solid whitesmoke;
+    border: 2px solid var(--main-color2);
 }
-/* SKILLS */
 #skills {
-    background-color: #fff;
+    background-color: var(--main-color2);
+    box-shadow: 0 1px 6px var(--main-color4);
 }
 #skills .heading h2 {
-    color: black;
+    color: var(--main-color1);
     margin: 30px auto;
 }
 #skills .progress {
     height: auto;
     margin: 0 0 30px 0;
-    background-color: gray;
+    background-color: var(--main-color3);
 }
 #skills .progress-bar {
-    background-color: #111;
+    background-color: var(--main-color4);
 }
 #skills .progress h5 {
     margin-top: 5px;
-
 }
-/* EXPERIENCE */
 #experience {
-    background-color: #111;
+    background-color: var(--main-color1);
 }
 #experience .heading h2 {
-    color: whitesmoke;
+    color: var(--main-color2);
     margin: 30px auto;
 }
 .timeline {
     padding: 30px 10px;
     position: relative;
+    color: var(--main-color2);
 }
 .timeline:before {
     top: 0;
@@ -152,7 +157,7 @@ ul, ol {
     position: absolute;
     content: " ";
     width: 5px;
-    background-color: whitesmoke;
+    background-color: var(--main-color3);
     left: 50%;
     margin-left: -2.5px;
 }
@@ -168,7 +173,7 @@ ul, ol {
     display: table;
 }
 .timeline li .timeline-badge {
-    color: #111;
+    color: var(--main-color2);
     width: 50px;
     line-height: 50px;
     font-size: 20px;
@@ -177,7 +182,7 @@ ul, ol {
     top: 16px;
     left: 50%;
     margin-left: -25px;
-    background-color: #ddd;
+    background-color: var(--main-color3);
     border-radius: 50%;
 }
 .timeline-panel-container {
@@ -192,12 +197,12 @@ ul, ol {
     width: 90%;
     float: right;
     margin-right: 40px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--main-color2);
     border-radius: 7px;
     padding: 20px 25px;
     position: relative;
-    box-shadow: 0 1px 6px #ddd;
-    background-color: #fff;
+    box-shadow: 0 1px 6px var(--main-color2);
+    background-color: var(--main-color3);
 }
 .timeline-panel-container-inverted .timeline-panel {
     float: left;
@@ -209,8 +214,8 @@ ul, ol {
     right: -14px;
     display: inline-block;
     border-top: 14px solid transparent;
-    border-left: 14px solid #fff;
-    border-right: 0 solid #fff;
+    border-left: 14px solid var(--main-color2);
+    border-right: 0 solid var(--main-color2);
     border-bottom: 14px solid transparent;
     content: " ";
 }
@@ -221,19 +226,28 @@ ul, ol {
     right: auto;
 }
 .timeline-heading h3 {
-    margin-top: 5px;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: var(--main-color2);
     font-size: 20px;
 }
 .timeline-heading h4 {
-    color: #555;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: var(--main-color2);
     font-size: 18px;
 }
-/* EDUCATION */
+.timeline-heading p {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: var(--main-color2);
+    font-size: 18px;
+}
 #education {
-    background-color: #fff;
+    background-color: var(--main-color2);
 }
 #education .heading h2 {
-    color: black;
+    color: var(--main-color1);
     margin: 30px auto;
 }
 .education-block {
@@ -241,11 +255,11 @@ ul, ol {
     margin: 0 auto;
     text-align: center;
     padding: 30px;
-    background-color: gray;
+    background-color: var(--main-color3);
     border-radius: 10px;
-    border: 2px solid #555;
+    border: 2px solid var(--main-color3);
     margin-bottom: 20px;
-    color: #111;
+    color: var(--main-color1);
 }
 .education-block h5 {
     font-size: 15px;
@@ -264,12 +278,11 @@ ul, ol {
 .education-block .black-divider {
     margin-bottom: 20px;
 }
-/* PORTFOLIO */
 #portfolio {
-    background-color: #111;
+    background-color: var(--main-color1);
 }
 #portfolio .heading h2 {
-    color: #fff;
+    color: var(--main-color2);
     margin: 30px auto;
 }
 #portfolio .thumbnail img {
@@ -283,44 +296,42 @@ ul, ol {
     filter: none;
     -webkit-filter: none;
 }
-/* RECOMMANDATIONS */
 #citations {
-    background-color: #fff;
+    background-color: var(--main-color2);
 }
 #citations .heading h2 {
-    color: black;
+    color: var(--main-color1);
     margin: 30px auto;
 }
 .carousel-control.left, .carousel-control.right {
     background-image: none;
-    color: #111;
+    color: var(--main-color1);
 }
 .carousel-indicators {
     bottom: 0;
 }
 .carousel-indicators li {
-    border-color: #111;
+    border-color: var(--main-color1);
 }
 .carousel-indicators li.active {
-    background-color: #555;
+    background-color: var(--main-color3);
 }
 #myCarousel .item {
     padding: 40px 30px;
 }
 #myCarousel .item h3 {
-    color: #111;
+    color: var(--main-color1);
     font-style: italic;
 }
-/* CONTACT */
 #contact {
-    background-color: #111;
+    background-color: var(--main-color1);
 }
 #contact .heading h2 {
-    color: #fff;
+    color: var(--main-color2);
 }
 #contact-form {
   font-size: 20px;
-  color: #fff;
+  color: var(--main-color2);
 }
 .form-control {
   height: 50px;
@@ -330,7 +341,7 @@ ul, ol {
   font-style: italic;
   font-size: 18px;
   height: 25px;
-  color: #ff5733;
+  color: var(--main-color5);
 }
 #contact-form input[type=submit] {
   margin: 40px auto 0;
@@ -344,23 +355,23 @@ ul, ol {
 }
 /* FOOTER */
 footer {
-    background-color: #555;
+    background-color: var(--main-color3);
     padding: 10px 0 10px;
 }
 footer .glyphicon {
     font-size: 25px;
     margin: 20px;
-    color: whitesmoke;
+    color: var(--main-color2);
     height: 30px;
 }
 footer .glyphicon:hover {
     font-size: 27px;
 }
 footer h5 a {
-    color: whitesmoke;
+    color: var(--main-color2);
     font-weight: normal;
 }
 footer h5 a:hover {
-    color: whitesmoke;
+    color: var(--main-color2);
     text-decoration: underline;
 }

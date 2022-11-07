@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Mon CV en ligne</title>
+        <title>Sébastien RONDEAU-CAMEIRA</title>
         <meta name="robots" content="index,follow">
         <meta name="Rating" content="General">
         <meta name="revisit-after" content="1 month">
@@ -46,13 +46,13 @@
                 </div>
                 <div class="heading">
                     <h1>Sébastien RONDEAU-CAMEIRA</h1>
-                    <h3>Développeur Web</h3>
+                    <h3>Développeur Web / DevOps</h3>
                     <a href="docs/cv-sebastien-fr.pdf" class="button">Télécharger le CV</a>
                 </div>
             </div>
         </section>
         <section id="skills">
-            <div class="gray-divider"></div>
+            <div class="black-divider"></div>
             <div class="heading">
                 <h2>Compétences</h2>
             </div>
@@ -178,7 +178,7 @@
         </section>
         <section id="education">
             <div class="container">
-                <div class="gray-divider"></div>
+                <div class="black-divider"></div>
                 <div class="heading">
                     <h2>Formations</h2>
                 </div>
@@ -250,7 +250,7 @@
         </section>
         <section id="citations">
             <div class="container">
-                <div class="gray-divider"></div>
+                <div class="black-divider"></div>
                 <div class="heading">
                     <h2>Citations Préférées</h2>
                 </div>
@@ -285,7 +285,7 @@
         </section>
         <section id="contact">
             <div class="container">
-            <div class="gray-divider"></div>
+            <div class="white-divider"></div>
             <div class="heading">
                 <h2>Contact</h2>
             </div>

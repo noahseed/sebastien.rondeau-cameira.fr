@@ -112,6 +112,11 @@
                             </div>
                         </div>
                         <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+                                <h5>Python 30%</h5>
+                            </div>
+                        </div>
+                        <div class="progress">
                             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
                                 <h5>C# 20%</h5>
                             </div>

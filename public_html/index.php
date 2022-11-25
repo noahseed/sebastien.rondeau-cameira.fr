@@ -1,4 +1,24 @@
-<!DOCTYPE html>
+<?php
+
+
+/**
+ * Copyright @ 2022
+ * Sébastien RONDEAU-CAMEIRA
+ * ------------------------
+ * https://t.me/SiriusEAEnki
+ */
+
+/**
+ * ON CHARGE LES DEPENCES
+ */
+require_once './App/Loader.php';
+
+/**
+ * ON CHARGE LE PLUGIN TELEGRAMLOGIN
+ */
+require_once './App/Telegram/TelegramLogin.php';
+
+?><!DOCTYPE html>
 <html lang="fr">
     <head>
         <meta charset="utf-8">
@@ -48,6 +68,17 @@
                     <h1>Sébastien RONDEAU-CAMEIRA</h1>
                     <h3>Développeur Web / DevOps</h3>
                     <a href="docs/cv-sebastien-fr.pdf" class="button">Télécharger le CV</a>
+                    <?php
+
+                        if (isset($avatar)) {
+                            echo $avatar;
+                        }
+
+                        if (isset($htmlTelegramLogin)) {
+                            echo $htmlTelegramLogin;
+                        }
+
+                    ?>
                 </div>
             </div>
         </section>

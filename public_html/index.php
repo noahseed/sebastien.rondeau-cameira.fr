@@ -67,12 +67,14 @@ require_once './App/Telegram/TelegramLogin.php';
                 <div class="heading">
                     <h1>Sébastien RONDEAU-CAMEIRA</h1>
                     <h3>Développeur Web / DevOps</h3>
-                    <a href="docs/cv-sebastien-fr.pdf" class="button">Télécharger le CV</a>
+                    <a href="docs/cv-sebastien-fr.pdf" class="button">Télécharger le CV</a><br><br>
                     <?php
 
+                        /*
                         if (isset($avatar)) {
                             echo $avatar;
                         }
+                        */
 
                         if (isset($htmlTelegramLogin)) {
                             echo $htmlTelegramLogin;

@@ -3,15 +3,15 @@
 /**
  * CONSTANTES
  */
-define('APP_NAME', 'MaxxieBot');
-define('APP_SITE', 'https://www.maxxiebot.fr');
+define('APP_NAME', 'Sirius Enki');
+define('APP_SITE', 'https://sebastien.rondeau-cameira.fr');
 
  /**
  * CONFIGURATION DU BOT
  */
-define('BOT_TOKEN', '5677612548:AAEjP2Ol_IEf9vbhIQ-W2rB5lkFUxEQZMEM');
-define('BOT_NAME', 'MaxxieBot');
-define('BOT_USERNAME', 'MaxxieBot');
+define('BOT_TOKEN', '5903800902:AAG2-AP5gsYAizOAt3-Pf7rSQ445gllTSnU');
+define('BOT_NAME', 'Sirius Enki');
+define('BOT_USERNAME', 'SiriusEnkiBot');
 
 /**
  * GROUPES ET CANAUX GERES PAR LE BOT

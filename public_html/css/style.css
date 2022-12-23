@@ -1,10 +1,10 @@
 :root {
-    --main-menu-color: rgb(143, 0, 226);
+    --main-menu-color: #8f00e2;
     --main-link-color: #ff5733;
     --main-color1: #111;
     --main-color2: #eee;
     --main-color3: #777;
-    --main-color4: rgb(143, 0, 226);
+    --main-color4: #8f00e2;
     --main-color5: #ff5733;
 }
 * {

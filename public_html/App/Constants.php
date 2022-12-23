@@ -3,15 +3,15 @@
 /**
  * CONSTANTES
  */
-define('APP_NAME', 'Sirius Enki');
+define('APP_NAME', 'Sébastien RONDEAU-CAMEIRA');
 define('APP_SITE', 'https://sebastien.rondeau-cameira.fr');
 
  /**
  * CONFIGURATION DU BOT
  */
-define('BOT_TOKEN', '5903800902:AAG2-AP5gsYAizOAt3-Pf7rSQ445gllTSnU');
-define('BOT_NAME', 'Sirius Enki');
-define('BOT_USERNAME', 'SiriusEnkiBot');
+define('BOT_TOKEN', '5752517622:AAEOxnc1mWg0IcNSo9V0b6CXkKuFc12zzo4');
+define('BOT_NAME', 'Tynnie Bot');
+define('BOT_USERNAME', 'TynnieBot');
 
 /**
  * GROUPES ET CANAUX GERES PAR LE BOT

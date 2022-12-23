@@ -49,7 +49,7 @@ require_once './App/Telegram/TelegramLogin.php';
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         <li><a href="#about">Moi</a></li>
-                        <li><a href="#skills">Compétences</a></li>
+                        <li><a href="#skills">Languages</a></li>
                         <li><a href="#experience">Expérience</a></li>
                         <li><a href="#education">Formations</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
@@ -66,7 +66,7 @@ require_once './App/Telegram/TelegramLogin.php';
                 </div>
                 <div class="heading">
                     <h1>Sébastien RONDEAU-CAMEIRA</h1>
-                    <h3>Développeur Web / DevOps</h3>
+                    <h3>Développeur Web / Technicien DevOps</h3>
                     <a href="docs/cv-sebastien-fr.pdf" class="button">Télécharger le CV</a><br><br>
                     <?php
 
@@ -87,29 +87,66 @@ require_once './App/Telegram/TelegramLogin.php';
         <section id="skills">
             <div class="black-divider"></div>
             <div class="heading">
-                <h2>Compétences</h2>
+                <h2>Languages humains</h2>
             </div>
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="96" aria-valuemin="0" aria-valuemax="100" style="width: 96%">
+                                <h5>Français 96%</h5>
+                            </div>
+                        </div>
+                        <div class="progress">
                             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%">
-                                <h5>HTML 85%</h5>
+                                <h5>Anglais 85%</h5>
                             </div>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                <h5>CSS 80%</h5>
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" style="width: 62%">
+                                <h5>Italien 62%</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" style="width: 92%">
+                                <h5>Portugais 92%</h5>
                             </div>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
-                                <h5>JSON 50%</h5>
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100" style="width: 74%">
+                                <h5>Espagnol 74%</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="black-divider"></div>
+            <div class="heading">
+                <h2>Languages machine</h2>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
+                                <h5>HTML 95%</h5>
                             </div>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                <h5>XML 40%</h5>
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                                <h5>CSS 90%</h5>
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="63" aria-valuemin="0" aria-valuemax="100" style="width: 63%">
+                                <h5>JSON 63%</h5>
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="49" aria-valuemin="0" aria-valuemax="100" style="width: 49%">
+                                <h5>XML 49%</h5>
                             </div>
                         </div>
                         <div class="progress">
@@ -125,13 +162,13 @@ require_once './App/Telegram/TelegramLogin.php';
                     </div>
                     <div class="col-md-6">
                         <div class="progress">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
-                                <h5>PHP 70%</h5>
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100" style="width: 73%">
+                                <h5>PHP 73%</h5>
                             </div>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
-                                <h5>MySQL/MariaDB 65%</h5>
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100" style="width: 68%">
+                                <h5>MySQL/MariaDB 68%</h5>
                             </div>
                         </div>
                         <div class="progress">

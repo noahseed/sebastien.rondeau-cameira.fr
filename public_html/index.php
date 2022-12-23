@@ -289,35 +289,35 @@ require_once './App/Telegram/TelegramLogin.php';
                 </div>
                 <div class="row">
                     <div class="col-sm-4">
-                        <a class="thumbnail" href="https://spiritualite-quantique.fr" target="_blank">
-                            <img src="images/facebook-share.png" alt="spiritualite-quantique.fr">
+                        <a class="thumbnail" href="https://www.maxxiebot.fr/" target="_blank">
+                            <img src="images/maxxiebot.jpg" alt="maxxiebot.fr">
                         </a>
                     </div>
                     <div class="col-sm-4">
-                        <a class="thumbnail" href="https://sebastien.rondeau-cameira.fr" target="_blank">
-                            <img src="images/google-translate.png" alt="sebastien.rondeau-cameira.fr">
+                        <a class="thumbnail" href="https://sebastien.rondeau-cameira.fr/">
+                            <img src="images/sebastien-site.jpg" alt="sebastien.rondeau-cameira.fr">
                         </a>
                     </div>
                     <div class="col-sm-4">
-                        <a class="thumbnail" href="https://spiritualite-quantique.fr" target="_blank">
-                            <img src="images/twitter-video.png" alt="spiritualite-quantique.fr">
+                        <a class="thumbnail" href="https://www.maxxiecloud.fr/" target="_blank">
+                            <img src="images/maxxiecloud.jpg" alt="maxxiecloud.fr">
                         </a>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-4">
-                        <a class="thumbnail" href="https://youtube.com" target="_blank">
-                            <img src="images/youtube.png" alt="youtube">
+                        <a class="thumbnail" href="https://www.youtube.com/channel/UCXUIP8UKDMfS2hV7FepU7dw" target="_blank">
+                            <img src="images/youtube.png" alt="Youtube">
                         </a>
                     </div>
                     <div class="col-sm-4">
-                        <a class="thumbnail" href="https://sebastien.rondeau-cameira.fr" target="_blank">
-                            <img src="images/twitter-retweet.png" alt="sebastien.rondeau-cameira.fr">
+                        <a class="thumbnail" href="https://www.facebook.com/sirius.ea.enki/" target="_blank">
+                            <img src="images/facebook-share.png" alt="Facebook">
                         </a>
                     </div>
                     <div class="col-sm-4">
-                        <a class="thumbnail" href="https://spiritualite-quantique.fr" target="_blank">
-                            <img src="images/facebook-video.png" alt="facebook.com">
+                        <a class="thumbnail" href="https://t.me/SiriusEAEnki" target="_blank">
+                            <img src="images/telegram.jpg" alt="Telegram">
                         </a>
                     </div>
                 </div>
@@ -333,19 +333,14 @@ require_once './App/Telegram/TelegramLogin.php';
                     <ol class="carousel-indicators">
                         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                         <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
                     </ol>
                     <div class="carousel-inner" role="listbox">
                         <div class="item active">
-                            <h3>«Si tu crois que tu es trop petit pour changer les choses,<br>alors passe une nuit avec un moustique»</h3>
+                            <h3>« Si tu crois que tu es trop petit pour changer les choses,<br>alors passe une nuit avec un moustique »</h3>
                             <h4>Proverbe africain</h4>
                         </div>
                         <div class="item">
-                            <h3>«Si tu crois que tu es trop petit pour changer les choses,<br>alors passe une nuit avec un moustique»</h3>
-                            <h4>Proverbe africain</h4>
-                        </div>
-                        <div class="item">
-                            <h3>«Si tu crois que tu es trop petit pour changer les choses,<br>alors passe une nuit avec un moustique»</h3>
+                            <h3>« Je suis ce que je suis grâce à ce que nous sommes tous »</h3>
                             <h4>Proverbe africain</h4>
                         </div>
                     </div>

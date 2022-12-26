@@ -340,7 +340,7 @@ require_once './App/Telegram/TelegramLogin.php';
                             <h4>Proverbe africain</h4>
                         </div>
                         <div class="item">
-                            <h3>« Je suis ce que je suis grâce à ce que nous sommes tous »</h3>
+                            <h3>« Je suis ce que je suis<br>grâce à ce que nous sommes tous »</h3>
                             <h4>Proverbe africain</h4>
                         </div>
                     </div>

@@ -67,7 +67,7 @@ require_once './App/Telegram/TelegramLogin.php';
                 <div class="heading">
                     <h1>Sébastien RONDEAU-CAMEIRA</h1>
                     <h3>Développeur Web / Technicien DevOps</h3>
-                    <a href="docs/cv-sebastien-fr.pdf" class="button">Télécharger le CV</a><br><br>
+                    <a href="docs/cv-sebastien-fr.pdf" class="button" download="cv-sebastien-rondeau-cameira.pdf">Télécharger mon CV...</a><br><br>
                     <?php
 
                         /*
@@ -131,7 +131,7 @@ require_once './App/Telegram/TelegramLogin.php';
                     <div class="col-md-6">
                         <div class="progress">
                             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
-                                <h5>HTML 95%</h5>
+                                <h5>HTML 96%</h5>
                             </div>
                         </div>
                         <div class="progress">
@@ -168,7 +168,7 @@ require_once './App/Telegram/TelegramLogin.php';
                         </div>
                         <div class="progress">
                             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100" style="width: 68%">
-                                <h5>MySQL/MariaDB 68%</h5>
+                                <h5>MySQL/MariaDB 69%</h5>
                             </div>
                         </div>
                         <div class="progress">
@@ -178,12 +178,12 @@ require_once './App/Telegram/TelegramLogin.php';
                         </div>
                         <div class="progress">
                             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width: 35%">
-                                <h5>Bootstrap 35%</h5>
+                                <h5>Bootstrap 36%</h5>
                             </div>
                         </div>
                         <div class="progress">
                             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
-                                <h5>Python 30%</h5>
+                                <h5>Python 33%</h5>
                             </div>
                         </div>
                         <div class="progress">
@@ -289,35 +289,49 @@ require_once './App/Telegram/TelegramLogin.php';
                 </div>
                 <div class="row">
                     <div class="col-sm-4">
+                        <h3>MaxxieBot</h3>
                         <a class="thumbnail" href="https://www.maxxiebot.fr/" target="_blank">
                             <img src="images/maxxiebot.jpg" alt="maxxiebot.fr">
                         </a>
                     </div>
                     <div class="col-sm-4">
-                        <a class="thumbnail" href="https://sebastien.rondeau-cameira.fr/">
-                            <img src="images/sebastien-site.jpg" alt="sebastien.rondeau-cameira.fr">
+                        <h3>MaxxieCloud</h3>
+                        <a class="thumbnail" href="https://www.maxxiecloud.fr/" target="_blank">
+                            <img src="images/maxxiecloud.jpg" alt="maxxiecloud.fr">
                         </a>
                     </div>
                     <div class="col-sm-4">
-                        <a class="thumbnail" href="https://www.maxxiecloud.fr/" target="_blank">
-                            <img src="images/maxxiecloud.jpg" alt="maxxiecloud.fr">
+                        <h3>Mon CV en ligne</h3>
+                        <a class="thumbnail" href="https://sebastien.rondeau-cameira.fr/">
+                            <img src="images/sebastien-site.jpg" alt="sebastien.rondeau-cameira.fr">
                         </a>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-4">
-                        <a class="thumbnail" href="https://www.youtube.com/channel/UCXUIP8UKDMfS2hV7FepU7dw" target="_blank">
-                            <img src="images/youtube.png" alt="Youtube">
+                        <h3>Mon compte Telegram</h3>
+                        <a class="thumbnail" href="https://t.me/SiriusEAEnki" target="_blank">
+                            <img src="images/telegram.jpg" alt="Telegram">
                         </a>
                     </div>
                     <div class="col-sm-4">
+                        <h3>Mon compte LinkedIn</h3>
+                        <a class="thumbnail" href="https://www.linkedin.com/in/noahseed/" target="_blank">
+                            <img src="images/linkedin-black.png" alt="linkedIn">
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                        <h3>Ma page Facebook</h3>
                         <a class="thumbnail" href="https://www.facebook.com/sirius.ea.enki/" target="_blank">
                             <img src="images/facebook-share.png" alt="Facebook">
                         </a>
                     </div>
+                </div>
+                <div class="row">
                     <div class="col-sm-4">
-                        <a class="thumbnail" href="https://t.me/SiriusEAEnki" target="_blank">
-                            <img src="images/telegram.jpg" alt="Telegram">
+                        <h3>Ma chaîne YouTube</h3>
+                        <a class="thumbnail" href="https://www.youtube.com/channel/UCXUIP8UKDMfS2hV7FepU7dw" target="_blank">
+                            <img src="images/youtube.png" alt="Youtube">
                         </a>
                     </div>
                 </div>
@@ -333,15 +347,19 @@ require_once './App/Telegram/TelegramLogin.php';
                     <ol class="carousel-indicators">
                         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                         <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
                     </ol>
                     <div class="carousel-inner" role="listbox">
                         <div class="item active">
                             <h3>« Si tu crois que tu es trop petit pour changer les choses,<br>alors passe une nuit avec un moustique »</h3>
-                            <h4>Proverbe africain</h4>
+                            <h4>Proverbe africain.</h4>
                         </div>
                         <div class="item">
                             <h3>« Je suis ce que je suis<br>grâce à ce que nous sommes tous »</h3>
-                            <h4>Proverbe africain</h4>
+                            <h4>Proverbe africain.</h4>
+                        </div>
+                        <div class="item">
+                            <h3>Ubuntu.</h3>
                         </div>
                     </div>
                     <a class="left carousel-control" href="#myCarousel" data-slide="prev" role="button">

@@ -4,14 +4,14 @@
  * CONSTANTES
  */
 define('APP_NAME', 'Sébastien RONDEAU-CAMEIRA');
-define('APP_SITE', 'https://sebastien.rondeau-cameira.fr');
+define('APP_SITE', 'https://sebastien.rondeau-cameira.fr/');
 
  /**
  * CONFIGURATION DU BOT
  */
-define('BOT_TOKEN', '5752517622:AAEOxnc1mWg0IcNSo9V0b6CXkKuFc12zzo4');
-define('BOT_NAME', 'Tynnie Bot');
-define('BOT_USERNAME', 'TynnieBot');
+define('BOT_TOKEN', '5936958010:AAGylrVjSeJsYtk4EOPwsop0_NobQL_QmQM');
+define('BOT_NAME', 'SebDevBot');
+define('BOT_USERNAME', 'SebDevBot');
 
 /**
  * GROUPES ET CANAUX GERES PAR LE BOT

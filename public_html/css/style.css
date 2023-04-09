@@ -375,3 +375,15 @@ footer h5 a:hover {
     color: var(--main-color2);
     text-decoration: underline;
 }
+@media all and (max-width: 700px) {
+    h1 {
+        font-size: large;
+    }
+    h3 {
+        font-size: large;
+    }
+    img {
+        max-width: 250px;
+        height: auto;
+    }
+}

@@ -62,7 +62,7 @@ require_once './App/Telegram/TelegramLogin.php';
         <section id="about" class="container-fluid">
             <div class="row">
                 <div class="profile-picture">
-                    <img src="images/me.jpg" alt="Sébastien" class="img-circle">
+                    <img src="images/seb-enki.jpg" alt="Sébastien" class="img-circle">
                 </div>
                 <div class="heading">
                     <h1>Sébastien RONDEAU-CAMEIRA</h1>
@@ -70,14 +70,8 @@ require_once './App/Telegram/TelegramLogin.php';
                     <a href="docs/cv-sebastien-fr.pdf" class="button" download="cv-sebastien-rondeau-cameira.pdf">Télécharger mon CV...</a><br><br>
                     <?php
 
-                        /*
-                        if (isset($avatar)) {
-                            echo $avatar;
-                        }
-                        */
-
                         if (isset($htmlTelegramLogin)) {
-                            echo $htmlTelegramLogin;
+                            echo "<!-- " . $htmlTelegramLogin . " -->";
                         }
 
                     ?>

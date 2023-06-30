@@ -328,6 +328,12 @@ require_once './App/Telegram/TelegramLogin.php';
                             <img src="images/youtube.png" alt="Youtube">
                         </a>
                     </div>
+                    <div class="col-sm-4">
+                        <h3>Mon serveur Matrix</h3>
+                        <a class="thumbnail" href="https://matrix.maxxie.fr:8443" target="_blank">
+                            <img src="images/matrix.png" alt="Matrix">
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>

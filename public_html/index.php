@@ -236,7 +236,7 @@ require_once './App/Telegram/TelegramLogin.php';
                                     <p class="text-muted"><small class="glyphicon glyphicon-time"></small> 2000-2001</p>
                                 </div>
                                 <div class="timeline-body">
-                                    <p>Enregistrement/diffusion des émissions radio.</p>
+                                    <p>Enregistrement / diffusion des émissions radio.</p>
                                     <p>Technique.</p>
                                 </div>
                             </div>
@@ -290,7 +290,7 @@ require_once './App/Telegram/TelegramLogin.php';
                     </div>
                     <div class="col-sm-4">
                         <h3>MaxxieCloud</h3>
-                        <a class="thumbnail" href="https://www.maxxiecloud.fr/" target="_blank">
+                        <a class="thumbnail" href="https://maxxiecloud.fr/" target="_blank">
                             <img src="images/maxxiecloud.jpg" alt="maxxiecloud.fr">
                         </a>
                     </div>
@@ -326,12 +326,6 @@ require_once './App/Telegram/TelegramLogin.php';
                         <h3>Ma chaîne YouTube</h3>
                         <a class="thumbnail" href="https://www.youtube.com/channel/UCXUIP8UKDMfS2hV7FepU7dw" target="_blank">
                             <img src="images/youtube.png" alt="Youtube">
-                        </a>
-                    </div>
-                    <div class="col-sm-4">
-                        <h3>Mon serveur Matrix</h3>
-                        <a class="thumbnail" href="https://matrix.maxxie.fr:8443" target="_blank">
-                            <img src="images/matrix.png" alt="Matrix">
                         </a>
                     </div>
                 </div>

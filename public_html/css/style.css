@@ -94,9 +94,12 @@ ul, ol {
     text-align: center;
 }
 .profile-picture {
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
-
+    filter: grayscale(100%) drop-shadow(3px 3px 3px var(--main-color2));
+    -webkit-filter: grayscale(100%) drop-shadow(3px 3px 3px var(--main-color2));
+}
+.profile-picture:hover {
+    filter: grayscale(0%) drop-shadow(3px 3px 3px var(--main-color3));
+    -webkit-filter: grayscale(0%) drop-shadow(3px 3px 3px var(--main-color3));
 }
 #about .heading h1 {
     text-transform: uppercase;

@@ -97,19 +97,19 @@ function sendMail($emailText){
     
     try {
         //Server settings
-        //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+        //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                    //Enable verbose debug output
         $mail->isSMTP();                                            //Send using SMTP
         $mail->Host       = 'ssl0.ovh.net';                         //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-        $mail->Username   = 'postmaster@rondeau-cameira.fr';        //SMTP username
-        $mail->Password   = '_rdz8iK#uhQsprS';                      //SMTP password
+        $mail->Username   = 'webmaster@maxxie.fr';                  //SMTP username
+        $mail->Password   = 'DkEx7T-k*W_95_i';                      //SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable implicit TLS encryption
         $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
         
         //Recipients
-        $mail->setFrom('postmaster@rondeau-cameira.fr', 'Sébastien RONDEAU-CAMEIRA');
-        $mail->addAddress('sebastien@rondeau-cameira.fr', 'Sébastien RONDEAU-CAMEIRA'); //Add a recipient
-        $mail->addReplyTo('sebastien@rondeau-cameira.fr', 'Sébastien RONDEAU-CAMEIRA');
+        $mail->setFrom('webmaster@maxxie.fr', 'Sébastien RONDEAU-CAMEIRA');
+        $mail->addAddress('noahseed@hotmail.com', 'Sébastien RONDEAU-CAMEIRA'); //Add a recipient
+        $mail->addReplyTo('noahseed@hotmail.com', 'Sébastien RONDEAU-CAMEIRA');
         
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML

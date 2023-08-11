@@ -295,9 +295,9 @@ require_once './App/Telegram/TelegramLogin.php';
                         </a>
                     </div>
                     <div class="col-sm-4">
-                        <h3>Mon CV en ligne</h3>
-                        <a class="thumbnail" href="https://sebastien.rondeau-cameira.fr/">
-                            <img src="images/sebastien-site.jpg" alt="sebastien.rondeau-cameira.fr">
+                        <h3>Maxxie 432 Hz</h3>
+                        <a class="thumbnail" href="https://www.maxxie432.fr/" target="_blank">
+                            <img src="images/sebastien-site.jpg" alt="maxxie432.fr">
                         </a>
                     </div>
                 </div>
@@ -318,14 +318,6 @@ require_once './App/Telegram/TelegramLogin.php';
                         <h3>Ma page Facebook</h3>
                         <a class="thumbnail" href="https://www.facebook.com/sirius.ea.enki/" target="_blank">
                             <img src="images/facebook-share.png" alt="Facebook">
-                        </a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4">
-                        <h3>Ma chaîne YouTube</h3>
-                        <a class="thumbnail" href="https://www.youtube.com/channel/UCXUIP8UKDMfS2hV7FepU7dw" target="_blank">
-                            <img src="images/youtube.png" alt="Youtube">
                         </a>
                     </div>
                 </div>

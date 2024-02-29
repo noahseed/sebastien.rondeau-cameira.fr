@@ -109,7 +109,7 @@ function sendMail($emailText){
         //Recipients
         $mail->setFrom('webmaster@maxxie.fr', 'Sébastien RONDEAU-CAMEIRA');
         $mail->addAddress('noahseed@hotmail.com', 'Sébastien RONDEAU-CAMEIRA'); //Add a recipient
-        $mail->addReplyTo('noahseed@hotmail.com', 'Sébastien RONDEAU-CAMEIRA');
+        $mail->addReplyTo('sebastien@rondeau-cameira.fr', 'Sébastien RONDEAU-CAMEIRA');
         
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML

@@ -66,7 +66,7 @@ require_once './App/Telegram/TelegramLogin.php';
                 </div>
                 <div class="heading">
                     <h1>Sébastien RONDEAU-CAMEIRA</h1>
-                    <h3>Développeur Web / Technicien DevOps</h3>
+                    <h3>Développeur Web & Web Mobile / Technicien DevOps</h3>
                     <a href="docs/cv-sebastien-fr.pdf" class="button" download="cv-sebastien-rondeau-cameira.pdf">Télécharger mon CV...</a><br><br>
                     <?php
 
@@ -284,7 +284,7 @@ require_once './App/Telegram/TelegramLogin.php';
                 <div class="row">
                     <div class="col-sm-4">
                         <h3>MaxxieBot</h3>
-                        <a class="thumbnail" href="https://www.maxxiebot.fr/" target="_blank">
+                        <a class="thumbnail" href="https://maxxiebot.fr/" target="_blank">
                             <img src="images/maxxiebot.jpg" alt="maxxiebot.fr">
                         </a>
                     </div>
@@ -295,9 +295,9 @@ require_once './App/Telegram/TelegramLogin.php';
                         </a>
                     </div>
                     <div class="col-sm-4">
-                        <h3>Maxxie 432 Hz</h3>
-                        <a class="thumbnail" href="https://www.maxxie432.fr/" target="_blank">
-                            <img src="images/sebastien-site.jpg" alt="maxxie432.fr">
+                        <h3>Ma Page Perso</h3>
+                        <a class="thumbnail" href="https://sebastien.rondeau-cameira.fr/" target="_blank">
+                            <img src="images/sebastien-site.jpg" alt="sebastien.rondeau-cameira.fr">
                         </a>
                     </div>
                 </div>

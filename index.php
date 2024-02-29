@@ -283,6 +283,12 @@ require_once './App/Telegram/TelegramLogin.php';
                 </div>
                 <div class="row">
                     <div class="col-sm-4">
+                        <h3>Ma Page Perso</h3>
+                        <a class="thumbnail" href="https://sebastien.rondeau-cameira.fr/">
+                            <img src="images/sebastien-site.jpg" alt="sebastien.rondeau-cameira.fr">
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
                         <h3>MaxxieBot</h3>
                         <a class="thumbnail" href="https://maxxiebot.fr/" target="_blank">
                             <img src="images/maxxiebot.jpg" alt="maxxiebot.fr">
@@ -292,12 +298,6 @@ require_once './App/Telegram/TelegramLogin.php';
                         <h3>MaxxieCloud</h3>
                         <a class="thumbnail" href="https://maxxiecloud.fr/" target="_blank">
                             <img src="images/maxxiecloud.jpg" alt="maxxiecloud.fr">
-                        </a>
-                    </div>
-                    <div class="col-sm-4">
-                        <h3>Ma Page Perso</h3>
-                        <a class="thumbnail" href="https://sebastien.rondeau-cameira.fr/" target="_blank">
-                            <img src="images/sebastien-site.jpg" alt="sebastien.rondeau-cameira.fr">
                         </a>
                     </div>
                 </div>

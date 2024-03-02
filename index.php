@@ -295,9 +295,9 @@ require_once './App/Telegram/TelegramLogin.php';
                         </a>
                     </div>
                     <div class="col-sm-4">
-                        <h3>MaxxieCloud</h3>
-                        <a class="thumbnail" href="https://maxxiecloud.fr/" target="_blank">
-                            <img src="images/maxxiecloud.jpg" alt="maxxiecloud.fr">
+                        <h3>MaxxieBox</h3>
+                        <a class="thumbnail" href="https://maxxiebox.fr/" target="_blank">
+                            <img src="images/maxxiecloud.jpg" alt="maxxiebox.fr">
                         </a>
                     </div>
                 </div>

@@ -1,3 +1,48 @@
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=15768000; includeSubDomains; preload"
+  Header set Permissions-Policy "accelerometer=(), geolocation=('self'), fullscreen=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), display-capture=('self')"
+  Header set Content-Security-Policy "default-src 'self';"
+  <IfModule mod_setenvif.c>
+    <IfModule mod_fcgid.c>
+       SetEnvIfNoCase ^Authorization$ "(.+)" XAUTHORIZATION=$1
+       RequestHeader set XAuthorization %{XAUTHORIZATION}e env=XAUTHORIZATION
+    </IfModule>
+    <IfModule mod_proxy_fcgi.c>
+       SetEnvIfNoCase Authorization "(.+)" HTTP_AUTHORIZATION=$1
+    </IfModule>
+    <IfModule mod_lsapi.c>
+      SetEnvIfNoCase ^Authorization$ "(.+)" XAUTHORIZATION=$1
+      RequestHeader set XAuthorization %{XAUTHORIZATION}e env=XAUTHORIZATION
+    </IfModule>
+  </IfModule>
+
+  <IfModule mod_env.c>
+    # Add security and privacy related headers
+
+    # Avoid doubled headers by unsetting headers in "onsuccess" table,
+    # then add headers to "always" table: https://github.com/nextcloud/server/pull/19002
+    Header onsuccess unset Referrer-Policy
+    Header always set Referrer-Policy "no-referrer"
+
+    Header onsuccess unset X-Content-Type-Options
+    Header always set X-Content-Type-Options "nosniff"
+
+    Header onsuccess unset X-Frame-Options
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    Header onsuccess unset X-Permitted-Cross-Domain-Policies
+    Header always set X-Permitted-Cross-Domain-Policies "none"
+
+    Header onsuccess unset X-Robots-Tag
+    Header always set X-Robots-Tag "noindex, nofollow"
+
+    Header onsuccess unset X-XSS-Protection
+    Header always set X-XSS-Protection "1; mode=block"
+
+    SetEnv modHeadersAvailable true
+  </IfModule>
+</IfModule>
+
 # Activation Réécriture d'url
 RewriteEngine on
 
@@ -14,7 +59,3 @@ RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^(.*)$ $1.php
-
-#Redirection sur erreur 404
-#ErrorDocument 403 /?page=403
-#ErrorDocument 404 /?page=404

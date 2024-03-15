@@ -323,13 +323,27 @@ require_once './App/Telegram/TelegramLogin.php';
                 </div>
                 <div class="row">
                     <div class="col-sm-4">
-                        <h3>Aljoce</h3>
+                        <h3>Aljoce (Site Wordpress)</h3>
                         <a class="thumbnail" href="https://aljoce.com/" target="_blank">
                             <img src="images/aljoce.png" alt="Aljoce">
                         </a>
                     </div>
                     <div class="col-sm-4">
-                        <h3>WeKan</h3>
+                        <h3>Matrix (Serveur Synapse)</h3>
+                        <a class="thumbnail" href="https://matrix.maxxie.fr/" target="_blank">
+                            <img src="images/matrix.png" alt="Matrix">
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                        <h3>Openfire (Serveur XMPP)</h3>
+                        <a class="thumbnail" href="https://xmpp.maxxie.fr/" target="_blank">
+                            <img src="images/openfire.png" alt="Openfire">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <h3>WeKan (Kanban)</h3>
                         <a class="thumbnail" href="https://wekan.maxxie.fr/" target="_blank">
                             <img src="images/wekan.png" alt="WeKan">
                         </a>

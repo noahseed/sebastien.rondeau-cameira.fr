@@ -283,26 +283,6 @@ require_once './App/Telegram/TelegramLogin.php';
                 </div>
                 <div class="row">
                     <div class="col-sm-4">
-                        <h3>Maxxie 432Hz (WebRadio)</h3>
-                        <a class="thumbnail" href="https://maxxie432.fr/" target="_blank">
-                            <img src="images/maxxie432.jpg" alt="maxxie432.fr">
-                        </a>
-                    </div>
-                    <div class="col-sm-4">
-                        <h3>MaxxieBot (Bot Telegram)</h3>
-                        <a class="thumbnail" href="https://maxxiebot.fr/" target="_blank">
-                            <img src="images/maxxiebot.jpg" alt="maxxiebot.fr">
-                        </a>
-                    </div>
-                    <div class="col-sm-4">
-                        <h3>MaxxieBox (Instance Nextcloud)</h3>
-                        <a class="thumbnail" href="https://maxxiebox.fr/" target="_blank">
-                            <img src="images/maxxiebox.jpg" alt="maxxiebox.fr">
-                        </a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4">
                         <h3>Mon compte Telegram</h3>
                         <a class="thumbnail" href="https://t.me/SiriusEAEnki" target="_blank">
                             <img src="images/telegram.jpg" alt="Telegram">
@@ -329,19 +309,45 @@ require_once './App/Telegram/TelegramLogin.php';
                         </a>
                     </div>
                     <div class="col-sm-4">
+                        <h3>Element (Client Matrix)</h3>
+                        <a class="thumbnail" href="https://element.maxxie.fr/" target="_blank">
+                            <img src="images/element.png" alt="Element">
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
                         <h3>Matrix (Serveur Synapse)</h3>
                         <a class="thumbnail" href="https://matrix.maxxie.fr/" target="_blank">
                             <img src="images/matrix.png" alt="Matrix">
                         </a>
                     </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <h3>Maxxie 432Hz (WebRadio)</h3>
+                        <a class="thumbnail" href="https://maxxie432.fr/" target="_blank">
+                            <img src="images/maxxie432.jpg" alt="maxxie432.fr">
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                        <h3>MaxxieBot (Bot Telegram)</h3>
+                        <a class="thumbnail" href="https://maxxiebot.fr/" target="_blank">
+                            <img src="images/maxxiebot.jpg" alt="maxxiebot.fr">
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                        <h3>MaxxieBox (Instance Nextcloud)</h3>
+                        <a class="thumbnail" href="https://maxxiebox.fr/" target="_blank">
+                            <img src="images/maxxiebox.jpg" alt="maxxiebox.fr">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-sm-4">
                         <h3>Openfire (Serveur XMPP)</h3>
                         <a class="thumbnail" href="https://xmpp.maxxie.fr/" target="_blank">
                             <img src="images/openfire.png" alt="Openfire">
                         </a>
                     </div>
-                </div>
-                <div class="row">
                     <div class="col-sm-4">
                         <h3>WeKan (Kanban)</h3>
                         <a class="thumbnail" href="https://wekan.maxxie.fr/" target="_blank">

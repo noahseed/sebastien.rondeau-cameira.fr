@@ -343,6 +343,12 @@ require_once './App/Telegram/TelegramLogin.php';
                 </div>
                 <div class="row">
                     <div class="col-sm-4">
+                        <h3>Moodle</h3>
+                        <a class="thumbnail" href="https://moodle.maxxie.fr/" target="_blank">
+                            <img src="images/moodle.png" alt="Moodle">
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
                         <h3>Openfire (Serveur XMPP)</h3>
                         <a class="thumbnail" href="https://xmpp.maxxie.fr/" target="_blank">
                             <img src="images/openfire.png" alt="Openfire">

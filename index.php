@@ -329,7 +329,7 @@ require_once './App/Telegram/TelegramLogin.php';
                         </a>
                     </div>
                     <div class="col-sm-4">
-                        <h3>MaxxieBot (Bot Telegram)</h3>
+                        <h3>MaxxieBot (chatGPT Bot)</h3>
                         <a class="thumbnail" href="https://maxxiebot.fr/" target="_blank">
                             <img src="images/maxxiebot.jpg" alt="maxxiebot.fr">
                         </a>

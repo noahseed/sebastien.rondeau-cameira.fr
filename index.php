@@ -48,10 +48,10 @@ require_once './App/Telegram/TelegramLogin.php';
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li><a href="#about">Moi</a></li>
-                        <li><a href="#skills">Languages</a></li>
+                        <li><a href="#moi">Moi</a></li>
+                        <li><a href="#languages">Languages</a></li>
                         <li><a href="#experience">Expérience</a></li>
-                        <li><a href="#education">Formations</a></li>
+                        <li><a href="#formations">Formations</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
                         <li><a href="#citations">Citations</a></li>
                         <li><a href="#contact">Contact</a></li>
@@ -59,7 +59,7 @@ require_once './App/Telegram/TelegramLogin.php';
                 </div>
             </div>
         </nav>
-        <section id="about" class="container-fluid">
+        <section id="moi" class="container-fluid">
             <div class="row">
                 <div class="profile-picture">
                     <img src="images/seb-enki.jpg" alt="Sébastien" class="img-circle">
@@ -78,7 +78,7 @@ require_once './App/Telegram/TelegramLogin.php';
                 </div>
             </div>
         </section>
-        <section id="skills">
+        <section id="languages">
             <div class="black-divider"></div>
             <div class="heading">
                 <h2>Languages humains</h2>
@@ -245,7 +245,7 @@ require_once './App/Telegram/TelegramLogin.php';
                 </ul>
             </div>
         </section>
-        <section id="education">
+        <section id="formations">
             <div class="container">
                 <div class="black-divider"></div>
                 <div class="heading">
@@ -253,7 +253,7 @@ require_once './App/Telegram/TelegramLogin.php';
                 </div>
                 <div class="row">
                     <div class="col-sm-6">
-                        <div class="education-block">
+                        <div class="formations-block">
                             <h5>2013-2014</h5>
                             <span class="glyphicon glyphicon-education"></span>
                             <h3>CRP Le Belloy</h3>
@@ -263,7 +263,7 @@ require_once './App/Telegram/TelegramLogin.php';
                         </div>
                     </div>
                     <div class="col-sm-6">
-                        <div class="education-block">
+                        <div class="formations-block">
                             <h5>2018-2019</h5>
                             <span class="glyphicon glyphicon-education"></span>
                             <h3>CRP Mulhouse</h3>
@@ -316,7 +316,7 @@ require_once './App/Telegram/TelegramLogin.php';
                     </div>
                     <div class="col-sm-4">
                         <h3>Matrix (Serveur Synapse)</h3>
-                        <a class="thumbnail" href="https://matrix.maxxie.fr/" target="_blank">
+                        <a class="thumbnail" href="https://matrix.maxxie.fr/_matrix/static/" target="_blank">
                             <img src="images/matrix.png" alt="Matrix">
                         </a>
                     </div>
@@ -343,15 +343,15 @@ require_once './App/Telegram/TelegramLogin.php';
                 </div>
                 <div class="row">
                     <div class="col-sm-4">
-                        <h3>Moodle</h3>
+                        <h3>Moodle (MOOC)</h3>
                         <a class="thumbnail" href="https://moodle.maxxie.fr/" target="_blank">
                             <img src="images/moodle.png" alt="Moodle">
                         </a>
                     </div>
                     <div class="col-sm-4">
-                        <h3>Openfire (Serveur XMPP)</h3>
-                        <a class="thumbnail" href="https://xmpp.maxxie.fr/" target="_blank">
-                            <img src="images/openfire.png" alt="Openfire">
+                        <h3>Webmin (Gestion Serveur)</h3>
+                        <a class="thumbnail" href="https://webmin.maxxie.fr/" target="_blank">
+                            <img src="images/webmin.png" alt="Webmin">
                         </a>
                     </div>
                     <div class="col-sm-4">
@@ -449,7 +449,7 @@ require_once './App/Telegram/TelegramLogin.php';
                 <span class="glyphicon glyphicon-chevron-up"></span>
             </a>
             <h5>
-                <a href="https://sebastien.rondeau-cameira.fr/" target="_blank">&copy; 2017-<?php echo date('Y'); ?> Sébastien RONDEAU-CAMEIRA</a>
+                <a href="https://sebastien.rondeau-cameira.fr/" target="_blank">&copy; 2012-<?php echo date('Y'); ?> Sébastien RONDEAU-CAMEIRA</a>
             </h5>
         </footer>
     </body>

@@ -80,7 +80,7 @@ ul, ol {
 .icon-bar {
     background-color: var(--main-color2) !important;
 }
-#about {
+#moi {
     background: url("../images/space-background.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -101,7 +101,7 @@ ul, ol {
     filter: grayscale(0%) drop-shadow(3px 3px 3px var(--main-color3));
     -webkit-filter: grayscale(0%) drop-shadow(3px 3px 3px var(--main-color3));
 }
-#about .heading h1 {
+#moi .heading h1 {
     text-transform: uppercase;
     margin-top: 30px;
 }
@@ -123,23 +123,23 @@ ul, ol {
     text-decoration: none;
     border: 2px solid var(--main-color2);
 }
-#skills {
+#languages {
     background-color: var(--main-color2);
     box-shadow: 0 1px 6px var(--main-color4);
 }
-#skills .heading h2 {
+#languages .heading h2 {
     color: var(--main-color1);
     margin: 30px auto;
 }
-#skills .progress {
+#languages .progress {
     height: auto;
     margin: 0 0 30px 0;
     background-color: var(--main-color3);
 }
-#skills .progress-bar {
+#languages .progress-bar {
     background-color: var(--main-color4);
 }
-#skills .progress h5 {
+#languages .progress h5 {
     margin-top: 5px;
 }
 #experience {
@@ -246,14 +246,14 @@ ul, ol {
     color: var(--main-color2);
     font-size: 18px;
 }
-#education {
+#formations {
     background-color: var(--main-color2);
 }
-#education .heading h2 {
+#formations .heading h2 {
     color: var(--main-color1);
     margin: 30px auto;
 }
-.education-block {
+.formations-block {
     width: 80%;
     margin: 0 auto;
     text-align: center;
@@ -264,21 +264,21 @@ ul, ol {
     margin-bottom: 20px;
     color: var(--main-color1);
 }
-.education-block h5 {
+.formations-block h5 {
     font-size: 15px;
     margin-bottom: 15px;
 
 }
-.education-block .glyphicon {
+.formations-block .glyphicon {
     font-size: 40px;
 }
-.education-block h4 {
+.formations-block h4 {
     margin-bottom: 20px;
 }
-.education-block p {
+.formations-block p {
     font-weight: bold;
 }
-.education-block .black-divider {
+.formations-block .black-divider {
     margin-bottom: 20px;
 }
 #portfolio {

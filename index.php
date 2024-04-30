@@ -71,7 +71,7 @@ require_once './App/Telegram/TelegramLogin.php';
                     <?php
 
                         if (isset($htmlTelegramLogin)) {
-                            echo "<!-- " . $htmlTelegramLogin . " -->";
+                            echo $htmlTelegramLogin;
                         }
 
                     ?>

@@ -50,11 +50,11 @@ if ($tg_user !== FALSE) {
 
         }
 
-        //$htmlTelegramLogin = "<h4>{$salut}, <a href=\"https://t.me/{$username}\">{$first_name} {$last_name}</a>!</h4>";
+        $htmlTelegramLogin = "<h4>{$salut}, <a href=\"https://t.me/{$username}\">{$first_name} {$last_name}</a>!</h4>";
 
     } else {
 
-        //$htmlTelegramLogin = "<h4>{$salut}, {$first_name} {$last_name}!</h4>";
+        $htmlTelegramLogin = "<h4>{$salut}, {$first_name} {$last_name}!</h4>";
 
     }
 
@@ -72,7 +72,7 @@ if ($tg_user !== FALSE) {
     $htmlTelegramLogin = <<<HTML
     <div id="login">
                     <script async src="https://telegram.org/js/telegram-widget.js?21" data-telegram-login="{$bot_username}" data-size="large"
-                    data-userpic="false" data-auth-url="Check_Authorization" data-request-access="write"></script>
+                    data-userpic="false" data-auth-url="Check_Authorization.php" data-request-access="write"></script>
                 </div>\n
     HTML;
 

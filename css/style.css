@@ -259,11 +259,11 @@ ul, ol {
     margin: 0 auto;
     text-align: center;
     padding: 30px;
-    background-color: var(--main-color3);
+    background-color: #666;
     border-radius: 10px;
     border: 2px solid var(--main-color3);
     margin-bottom: 20px;
-    color: var(--main-color1);
+    color: var(--main-color2);
 }
 .formations-block h5 {
     font-size: 15px;
@@ -275,6 +275,7 @@ ul, ol {
 }
 .formations-block h4 {
     margin-bottom: 20px;
+    color: var(--main-color2);
 }
 .formations-block p {
     font-weight: bold;
@@ -379,7 +380,7 @@ ul, ol {
 }
 /* FOOTER */
 footer {
-    background-color: var(--main-color3);
+    background-color: #666;
     padding: 10px 0 10px;
 }
 footer .glyphicon {

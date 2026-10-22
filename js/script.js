@@ -1,4 +1,16 @@
 $(function () {
+    function refreshScrollSpy() {
+        var scrollSpy = $("body").data("bs.scrollspy");
+        if (scrollSpy) {
+            scrollSpy.options.offset = $(".navbar").outerHeight() + 20;
+            scrollSpy.refresh();
+            scrollSpy.process();
+        }
+    }
+
+    $(window).on("load resize", refreshScrollSpy);
+    $("#myNavbar").on("hidden.bs.collapse", refreshScrollSpy);
+
     $(".navbar a, footer a[href^='#']").on("click", function (event) {
         var hash = this.hash;
         var target = hash && document.getElementById(hash.slice(1));

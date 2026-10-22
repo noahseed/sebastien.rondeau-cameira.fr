@@ -28,6 +28,7 @@ img {
 }
 section {
     padding: 45px 0 80px 0;
+    scroll-margin-top: 70px;
 }
 section .heading {
     text-align: center;
@@ -87,7 +88,7 @@ ul, ol {
     -o-background-size: cover;
     background-size: cover;
     object-fit: cover;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -319,6 +320,23 @@ ul, ol {
 .carousel-indicators li.active {
     background-color: var(--main-color3);
 }
+.carousel-indicators li {
+    position: relative;
+}
+.carousel-indicators button {
+    position: absolute;
+    inset: -7px;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+}
+.carousel-indicators button:focus-visible {
+    outline: 2px solid var(--main-color1);
+    outline-offset: 2px;
+}
 #myCarousel .item {
     padding: 40px 30px;
 }
@@ -378,7 +396,37 @@ footer h5 a:hover {
     color: var(--main-color2);
     text-decoration: underline;
 }
-@media all and (max-width: 700px) {
+@media all and (max-width: 767px) {
+    #moi {
+        padding-top: 80px;
+    }
+    .timeline:before,
+    .timeline li .timeline-badge {
+        left: 25px;
+    }
+    .timeline-panel-container,
+    .timeline-panel-container-inverted {
+        width: 100%;
+        float: none;
+        padding-left: 60px;
+    }
+    .timeline-panel,
+    .timeline-panel-container-inverted .timeline-panel {
+        width: 100%;
+        float: none;
+        margin: 0;
+        padding: 20px 15px;
+        overflow-wrap: break-word;
+    }
+    .timeline-panel:after {
+        border-left-width: 0;
+        border-right-width: 14px;
+        left: -14px;
+        right: auto;
+    }
+    .formations-block {
+        width: 100%;
+    }
     h1 {
         font-size: large;
     }
@@ -388,5 +436,18 @@ footer h5 a:hover {
     img {
         max-width: 250px;
         height: auto;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    section {
+        scroll-margin-top: 120px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
     }
 }

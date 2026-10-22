@@ -206,7 +206,7 @@ ul, ol {
     padding: 20px 25px;
     position: relative;
     box-shadow: 0 1px 6px var(--main-color2);
-    background-color: var(--main-color3);
+    background-color: #666;
 }
 .timeline-panel-container-inverted .timeline-panel {
     float: left;
@@ -308,6 +308,9 @@ ul, ol {
     margin: 30px auto;
 }
 .carousel-control.left, .carousel-control.right {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
     background-image: none;
     color: var(--main-color1);
 }

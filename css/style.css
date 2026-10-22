@@ -78,7 +78,7 @@ ul, ol {
     background-color: var(--main-color2) !important;
 }
 #moi {
-    background: url("../images/space-background.jpg") no-repeat center center fixed;
+    background: url("../images/optimized/space-background.webp") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -416,4 +416,21 @@ footer h5 a:hover {
         animation: none !important;
         transition: none !important;
     }
+}
+
+.skip-link {
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    z-index: 1100;
+    padding: 12px 18px;
+    color: #fff;
+    background: #111;
+    transform: translateY(-200%);
+}
+.skip-link:focus {
+    color: #fff;
+    transform: translateY(0);
+    outline: 3px solid #fff;
+    outline-offset: 2px;
 }

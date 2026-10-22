@@ -7,6 +7,13 @@ $(function () {
         return height;
     }
 
+    function updateCurrentSection() {
+        $(".navbar a").removeAttr("aria-current");
+        $(".navbar li.active > a").attr("aria-current", "location");
+    }
+
+    $("body").on("activate.bs.scrollspy", updateCurrentSection);
+
     // Initialize explicitly: the ready callback may run after window.load.
     $("body").scrollspy({ target: ".navbar", offset: navigationHeight() + 20 });
 
@@ -16,6 +23,7 @@ $(function () {
             scrollSpy.options.offset = navigationHeight() + 20;
             scrollSpy.refresh();
             scrollSpy.process();
+            updateCurrentSection();
         }
     }
 
@@ -26,7 +34,7 @@ $(function () {
         document.fonts.ready.then(refreshScrollSpy);
     }
 
-    $(".navbar a, footer a[href^='#']").on("click", function (event) {
+    $(".navbar a, footer a[href^='#'], .skip-link").on("click", function (event) {
         var hash = this.hash;
         var target = hash && document.getElementById(hash.slice(1));
 

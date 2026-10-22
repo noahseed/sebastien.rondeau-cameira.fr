@@ -1,15 +1,30 @@
 $(function () {
+    function navigationHeight() {
+        var height = $(".navbar").outerHeight();
+        if ($(".navbar-toggle").is(":visible")) {
+            height -= document.getElementById("myNavbar").getBoundingClientRect().height;
+        }
+        return height;
+    }
+
+    // Initialize explicitly: the ready callback may run after window.load.
+    $("body").scrollspy({ target: ".navbar", offset: navigationHeight() + 20 });
+
     function refreshScrollSpy() {
         var scrollSpy = $("body").data("bs.scrollspy");
         if (scrollSpy) {
-            scrollSpy.options.offset = $(".navbar").outerHeight() + 20;
+            scrollSpy.options.offset = navigationHeight() + 20;
             scrollSpy.refresh();
             scrollSpy.process();
         }
     }
 
     $(window).on("load resize", refreshScrollSpy);
-    $("#myNavbar").on("hidden.bs.collapse", refreshScrollSpy);
+    $("#myNavbar").on("shown.bs.collapse hidden.bs.collapse", refreshScrollSpy);
+    refreshScrollSpy();
+    if (document.fonts) {
+        document.fonts.ready.then(refreshScrollSpy);
+    }
 
     $(".navbar a, footer a[href^='#']").on("click", function (event) {
         var hash = this.hash;
@@ -24,7 +39,7 @@ $(function () {
         var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
         function scrollToTarget() {
-            var top = Math.max(0, $(target).offset().top - $(".navbar").outerHeight() - 10);
+            var top = Math.max(0, $(target).offset().top - navigationHeight() - 10);
             // Animate one scroll root so completion runs once.
             $(document.scrollingElement || document.documentElement).stop(true).animate(
                 { scrollTop: top }, reducedMotion ? 0 : 500, function () {

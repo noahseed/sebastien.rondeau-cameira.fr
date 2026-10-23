@@ -31,6 +31,7 @@ SRI sont vérifiées par le navigateur.
 
 ## Images
 
-Les originaux restent dans `images/`. Les versions WebP optimisées utilisées par
-la page sont dans `images/optimized/`. Le portrait JPEG original sert aussi aux
-aperçus de partage Open Graph.
+Les versions WebP optimisées utilisées par la page sont dans `images/optimized/`.
+Le portrait JPEG `images/me.jpg` est conservé pour les aperçus de partage Open Graph.
+Les autres images non utilisées ont été supprimées ; leurs originaux restent
+récupérables dans l’historique Git.

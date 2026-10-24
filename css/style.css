@@ -13,7 +13,7 @@ body {
 h1,h2,h3,h4,h5,h6 {
     font-weight: bold;
     color: var(--main-color2);
-    text-shadow: 2px 2px 2px var(--main-color3);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 h4 {
     color: var(--main-color1);
@@ -67,11 +67,11 @@ ul, ol {
 }
 .navbar li a {
     color: var(--main-color2) !important;
-    text-shadow: 2px 2px 2px var(--main-color1);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 }
 .navbar-nav li a:hover, .navbar-nav li.active a {
     color: var(--main-color2) !important;
-    text-shadow: 2px 2px 2px var(--main-color3);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
     background-color: var(--main-color1) !important;
 }
 .icon-bar {
@@ -100,6 +100,9 @@ ul, ol {
 #moi .heading h1 {
     text-transform: uppercase;
     margin-top: 30px;
+}
+#moi .heading h1, #moi .heading h3 {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 .button {
     font-weight: bold;
@@ -199,7 +202,7 @@ ul, ol {
     border-radius: 7px;
     padding: 20px 25px;
     position: relative;
-    box-shadow: 0 1px 6px var(--main-color2);
+    box-shadow: 0 1px 4px rgba(238, 238, 238, 0.18);
     background-color: #666;
 }
 .timeline-panel-container-inverted .timeline-panel {

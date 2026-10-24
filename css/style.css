@@ -119,8 +119,8 @@ ul, ol {
 }
 .button:hover,
 .button:focus-visible {
-    background: var(--main-color4);
-    color: var(--main-color2);
+    background: #fff;
+    color: #000;
     text-decoration: none;
 }
 #languages {

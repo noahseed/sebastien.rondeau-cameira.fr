@@ -118,7 +118,7 @@ ul, ol {
     background: var(--main-color4);
 }
 .button:hover {
-    border-color: transparent;
+    border-color: var(--main-color4);
 }
 .button:hover,
 .button:focus-visible {

@@ -52,6 +52,7 @@ ul, ol {
 }
 .navbar {
     background-color: var(--main-color3);
+    box-shadow: 0 3px 8px -2px rgba(0, 0, 0, 0.2);
     font-size: 12px;
     letter-spacing: 4px;
     text-transform: uppercase;

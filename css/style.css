@@ -109,13 +109,16 @@ ul, ol {
     font-weight: bold;
     text-transform: uppercase;
     color: var(--main-color2);
-    border: 2px solid var(--main-color4);
+    border: 2px solid #fff;
     display: inline-block;
     margin-top: 20px;
     padding: 18px 50px;
     border-radius: 5px;
     transition: all 0.3s ease-in 0s;
     background: var(--main-color4);
+}
+.button:hover {
+    border-color: transparent;
 }
 .button:hover,
 .button:focus-visible {

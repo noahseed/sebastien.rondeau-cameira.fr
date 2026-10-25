@@ -27,7 +27,8 @@ Ils s’exécutent également dans GitHub Actions à chaque push et pull request
 
 Pour utiliser un Chrome déjà installé, définir `PLAYWRIGHT_CHROMIUM_EXECUTABLE`.
 Le chargement des ressources CDN nécessite un accès Internet ; leurs empreintes
-SRI sont vérifiées par le navigateur.
+SRI sont vérifiées par le navigateur. La police Lato est servie localement depuis
+`fonts/`, avec sa licence OFL, pour éviter une feuille de style externe bloquante.
 
 ## Images
 
